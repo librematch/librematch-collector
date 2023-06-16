@@ -1,0 +1,211 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["tracing"]
+  binaryTargets   = ["native", "darwin", "debian-openssl-1.1.x", "linux-musl"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model leaderboard_row {
+  leaderboard_id  Int
+  profile_id      Int
+  name            String
+  rank            Int?
+  rating          Int?
+  last_match_time DateTime?
+  drops           Int?
+  losses          Int?
+  streak          Int?
+  wins            Int?
+  updated_at      DateTime  @updatedAt
+  rank_country    Int?
+  profile         profile   @relation(fields: [profile_id], references: [profile_id])
+
+  @@id([leaderboard_id, profile_id])
+  @@index([rating], map: "IDX_935515e6126c1a045608ca78b9")
+  @@index([profile_id], map: "IDX_ke5ie28aa98207f3a21145feb8")
+}
+
+model match {
+  match_id                Int       @id
+  name                    String?
+  server                  String?
+  started                 DateTime?
+  finished                DateTime?
+  allow_cheats            Boolean?
+  difficulty              Int?
+  empire_wars_mode        Boolean?
+  ending_age              Int?
+  full_tech_tree          Boolean?
+  game_mode               Int?
+  location                Int?
+  lock_speed              Boolean?
+  lock_teams              Boolean?
+  map_size                Int?
+  population              Int?
+  record_game             Boolean?
+  regicide_mode           Boolean?
+  resources               Int?
+  reveal_map              Int?
+  shared_exploration      Boolean?
+  speed                   Int?
+  starting_age            Int?
+  sudden_death_mode       Boolean?
+  team_positions          Boolean?
+  team_together           Boolean?
+  treaty_length           Int?
+  turbo_mode              Boolean?
+  victory                 Int?
+  internal_leaderboard_id Int?
+  leaderboard_id          Int?
+  privacy                 Int?
+  game_variant            Int?
+  creator_profile_id      Int?
+  creator_profile         profile?  @relation("creator_profile", fields: [creator_profile_id], references: [profile_id])
+  players                 player[]
+
+  @@index([finished], map: "IDX_ae68e51ffaf47285b168278edf")
+  @@index([started], map: "IDX_e7b6cfca8139b9aa85880aab9e")
+}
+
+model player {
+  match_id   Int
+  profile_id Int
+  civ        Int?
+  slot       Int      @db.SmallInt
+  team       Int?     @db.SmallInt
+  color      Int?     @db.SmallInt
+  is_ready   Int
+  status     Int
+  won        Boolean?
+  replay     Boolean?
+  match      match    @relation(fields: [match_id], references: [match_id])
+  profile    profile  @relation(fields: [profile_id], references: [profile_id])
+
+  @@id([match_id, profile_id, slot])
+  @@index([match_id], map: "IDX_58afd2c450f166eacbdf982841")
+  @@index([profile_id], map: "IDX_ba3de28aa98207f3a21145feb8")
+}
+
+model profile {
+  profile_id              Int               @id
+  steam_id                String?
+  name                    String?
+  clan                    String?
+  last_match_time         DateTime?
+  country                 String?
+  avatarhash              String?
+  last_match_fetched_time DateTime?
+  last_refresh            DateTime?
+  leaderboard_row         leaderboard_row[]
+  created_matches         match[]           @relation("creator_profile")
+  players                 player[]
+}
+
+model match_pending {
+  profile_id Int @id
+  priority   Int
+}
+
+model api_key {
+  api_key String @id
+}
+
+model setting {
+  component String
+  key       String
+  value     String
+
+  @@id([component, key])
+}
+
+model match_raw {
+  match_id Int      @id
+  json     String
+  version  Int?
+  error    Boolean?
+
+  @@index([version], map: "IDX_match_raw_version")
+  @@index([error], map: "IDX_match_raw_error")
+}
+
+model rating {
+  profile_id     Int
+  games          Int
+  rating         Int      @db.SmallInt
+  date           DateTime
+  leaderboard_id Int
+  rating_diff    Int?     @db.SmallInt
+
+  @@id([leaderboard_id, profile_id, games])
+}
+
+model smaller_match {
+  match_id           Int              @id
+  name               String?
+  started            Int?
+  finished           Int?
+  leaderboard_id     Int?             @db.SmallInt
+  num_slots          Int?             @db.SmallInt
+  has_password       Boolean?
+  server             String?
+  map_type           Int?             @db.SmallInt
+  average_rating     Int?             @db.SmallInt
+  cheats             Boolean?
+  ending_age         Int?             @db.SmallInt
+  expansion          String?
+  full_tech_tree     Boolean?
+  game_type          Int?             @db.SmallInt
+  has_custom_content Boolean?
+  lock_speed         Boolean?
+  lock_teams         Boolean?
+  map_size           Int?
+  num_players        Int?             @db.SmallInt
+  pop                Int?
+  ranked             Boolean?
+  rating_type        Int?             @db.SmallInt
+  resources          Int?             @db.SmallInt
+  rms                String?
+  scenario           String?
+  shared_exploration Boolean?
+  speed              Int?             @db.SmallInt
+  starting_age       Int?             @db.SmallInt
+  team_positions     Boolean?
+  team_together      Boolean?
+  treaty_length      Int?             @db.SmallInt
+  turbo              Boolean?
+  version            String?
+  victory            Int?             @db.SmallInt
+  victory_time       Int?
+  visibility         Int?             @db.SmallInt
+  players            smaller_player[]
+}
+
+model smaller_player {
+  match_id   Int
+  profile_id Int
+  slot       Int             @db.SmallInt
+  civ        Int?
+  team       Int?            @db.SmallInt
+  color      Int?            @db.SmallInt
+  won        Boolean?
+  match      smaller_match   @relation(fields: [match_id], references: [match_id])
+  profile    smaller_profile @relation(fields: [profile_id], references: [profile_id])
+
+  @@id([match_id, profile_id, slot])
+}
+
+model smaller_profile {
+  profile_id              Int              @id
+  steam_id                String?
+  name                    String?
+  clan                    String?
+  last_match_time         DateTime?
+  country                 String?
+  avatarhash              String?
+  last_match_fetched_time DateTime?
+  players                 smaller_player[]
+}

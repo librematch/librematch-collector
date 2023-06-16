@@ -1,0 +1,6 @@
+# Run these checks against server to verify it works correctly
+# Each check takes the form of:
+#   <pathname> <expected contents of page>
+#
+# For example:
+#   /about     Our Amazing Team

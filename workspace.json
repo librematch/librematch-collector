@@ -1,0 +1,115 @@
+{
+  "version": 1,
+  "projects": {
+    "collector": {
+      "root": "collector",
+      "sourceRoot": "collector/src",
+      "projectType": "application",
+      "prefix": "collector",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/collector",
+            "main": "collector/src/main.ts",
+            "tsConfig": "collector/tsconfig.app.json",
+            "assets": [
+              "collector/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "collector/src/environments/environment.ts",
+                  "with": "collector/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "collector:build"
+          }
+        }
+      }
+    },
+    "graph": {
+      "root": "graph",
+      "sourceRoot": "graph/src",
+      "projectType": "application",
+      "prefix": "graph",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/graph",
+            "main": "graph/src/main.ts",
+            "tsConfig": "graph/tsconfig.app.json",
+            "assets": [
+              "graph/src/assets"
+            ]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "graph/src/environments/environment.ts",
+                  "with": "graph/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          },
+          "outputs": [
+            "{options.outputPath}"
+          ]
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "graph:build"
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/react"
+  },
+  "schematics": {
+    "@nrwl/react": {
+      "application": {
+        "style": "css",
+        "linter": "eslint",
+        "babel": true
+      },
+      "component": {
+        "style": "css"
+      },
+      "library": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    },
+    "@nrwl/next": {
+      "application": {
+        "style": "css",
+        "linter": "eslint"
+      }
+    }
+  },
+  "defaultProject": "todos"
+}

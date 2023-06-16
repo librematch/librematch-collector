@@ -1,0 +1,1025 @@
+{
+    "language": "tr",
+    "age": [
+        {
+            "id": 0,
+            "string": "Normal"
+        },
+        {
+            "id": 2,
+            "string": "Karanlık Çağ"
+        },
+        {
+            "id": 3,
+            "string": "Feodal Çağ"
+        },
+        {
+            "id": 4,
+            "string": "Kale Çağı"
+        },
+        {
+            "id": 5,
+            "string": "İmparatorluk Çağı"
+        },
+        {
+            "id": 6,
+            "string": "İmparatorluk Ötesi Çağ"
+        }
+    ],
+    "civ": [
+        {
+            "id": 1,
+            "string": "Britonlar"
+        },
+        {
+            "id": 2,
+            "string": "Franklar"
+        },
+        {
+            "id": 3,
+            "string": "Gotlar"
+        },
+        {
+            "id": 4,
+            "string": "Tötonlar"
+        },
+        {
+            "id": 5,
+            "string": "Japonlar"
+        },
+        {
+            "id": 6,
+            "string": "Çinliler"
+        },
+        {
+            "id": 7,
+            "string": "Bizanslılar"
+        },
+        {
+            "id": 8,
+            "string": "Persler"
+        },
+        {
+            "id": 9,
+            "string": "Sarazenler"
+        },
+        {
+            "id": 10,
+            "string": "Türkler"
+        },
+        {
+            "id": 11,
+            "string": "Vikingler"
+        },
+        {
+            "id": 12,
+            "string": "Moğollar"
+        },
+        {
+            "id": 13,
+            "string": "Keltler"
+        },
+        {
+            "id": 14,
+            "string": "İspanyollar"
+        },
+        {
+            "id": 15,
+            "string": "Aztekler"
+        },
+        {
+            "id": 16,
+            "string": "Mayalar"
+        },
+        {
+            "id": 17,
+            "string": "Hunlar"
+        },
+        {
+            "id": 18,
+            "string": "Koreliler"
+        },
+        {
+            "id": 19,
+            "string": "İtalyanlar"
+        },
+        {
+            "id": 20,
+            "string": "Hindustanis"
+        },
+        {
+            "id": 21,
+            "string": "İnkalar"
+        },
+        {
+            "id": 22,
+            "string": "Macarlar"
+        },
+        {
+            "id": 23,
+            "string": "Slavlar"
+        },
+        {
+            "id": 24,
+            "string": "Portekizliler"
+        },
+        {
+            "id": 25,
+            "string": "Etiyopyalılar"
+        },
+        {
+            "id": 26,
+            "string": "Malililer"
+        },
+        {
+            "id": 27,
+            "string": "Berberiler"
+        },
+        {
+            "id": 28,
+            "string": "Kmerler"
+        },
+        {
+            "id": 29,
+            "string": "Malaylar"
+        },
+        {
+            "id": 30,
+            "string": "Birmanlar"
+        },
+        {
+            "id": 31,
+            "string": "Vietnamlılar"
+        },
+        {
+            "id": 32,
+            "string": "Bulgarlar"
+        },
+        {
+            "id": 33,
+            "string": "Tatarlar"
+        },
+        {
+            "id": 34,
+            "string": "Kumanlar"
+        },
+        {
+            "id": 35,
+            "string": "Litvanyalılar"
+        },
+        {
+            "id": 36,
+            "string": "Burgundians"
+        },
+        {
+            "id": 37,
+            "string": "Sicilians"
+        },
+        {
+            "id": 38,
+            "string": "Poles"
+        },
+        {
+            "id": 39,
+            "string": "Bohemians"
+        },
+        {
+            "id": 40,
+            "string": "Dravidians"
+        },
+        {
+            "id": 41,
+            "string": "Bengalis"
+        },
+        {
+            "id": 42,
+            "string": "Gurjaras"
+        },
+        {
+            "id": 99,
+            "string": "Hintler"
+        }
+    ],
+    "game_type": [
+        {
+            "id": 0,
+            "string": "Rastgele Harita"
+        },
+        {
+            "id": 1,
+            "string": "Kral Katili"
+        },
+        {
+            "id": 2,
+            "string": "Ölüm Karşılaşması"
+        },
+        {
+            "id": 3,
+            "string": "Senaryo"
+        },
+        {
+            "id": 6,
+            "string": "Tepenin Kralı"
+        },
+        {
+            "id": 7,
+            "string": "Dünya Harikası Yarışı"
+        },
+        {
+            "id": 8,
+            "string": "Dünya Harikası Savunması"
+        },
+        {
+            "id": 9,
+            "string": "Turbo Rastgele Harita"
+        },
+        {
+            "id": 10,
+            "string": "Kadim Eseri Ele Geçir"
+        },
+        {
+            "id": 11,
+            "string": "Ani Ölüm"
+        },
+        {
+            "id": 12,
+            "string": "Battle Royale"
+        },
+        {
+            "id": 13,
+            "string": "İmparatorluk Savaşları"
+        },
+        {
+            "id": 15,
+            "string": "Co-Op Campaign"
+        }
+    ],
+    "leaderboard": [
+        {
+            "id": 0,
+            "string": "Sirasiz"
+        },
+        {
+            "id": 1,
+            "string": "Ölüm Karşılaşması"
+        },
+        {
+            "id": 2,
+            "string": "Takım Ölüm Karşılaşması"
+        },
+        {
+            "id": 3,
+            "string": "Rastgele Harita"
+        },
+        {
+            "id": 4,
+            "string": "Takım Rastgele Harita"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "map_size": [
+        {
+            "id": 0,
+            "string": "Minik (2 oyuncu)"
+        },
+        {
+            "id": 1,
+            "string": "Küçük (3 oyuncu)"
+        },
+        {
+            "id": 2,
+            "string": "Orta (4 oyuncu)"
+        },
+        {
+            "id": 3,
+            "string": "Normal (6 oyuncu)"
+        },
+        {
+            "id": 4,
+            "string": "Büyük (8 oyuncu)"
+        },
+        {
+            "id": 5,
+            "string": "Dev"
+        },
+        {
+            "id": 6,
+            "string": "Muazzam"
+        }
+    ],
+    "map_type": [
+        {
+            "id": 9,
+            "string": "Arabistan"
+        },
+        {
+            "id": 10,
+            "string": "Takımada"
+        },
+        {
+            "id": 11,
+            "string": "Baltık"
+        },
+        {
+            "id": 12,
+            "string": "Kara Orman"
+        },
+        {
+            "id": 13,
+            "string": "Kıyısal"
+        },
+        {
+            "id": 14,
+            "string": "Kıtasal"
+        },
+        {
+            "id": 15,
+            "string": "Krater Gölü"
+        },
+        {
+            "id": 16,
+            "string": "Hisar"
+        },
+        {
+            "id": 17,
+            "string": "Altına Hücum"
+        },
+        {
+            "id": 18,
+            "string": "Yayla"
+        },
+        {
+            "id": 19,
+            "string": "Adalar"
+        },
+        {
+            "id": 20,
+            "string": "Akdeniz"
+        },
+        {
+            "id": 21,
+            "string": "Göç"
+        },
+        {
+            "id": 22,
+            "string": "Nehirler"
+        },
+        {
+            "id": 23,
+            "string": "Takım Adaları"
+        },
+        {
+            "id": 24,
+            "string": "Tümü Rastgele"
+        },
+        {
+            "id": 25,
+            "string": "İskandinavya"
+        },
+        {
+            "id": 26,
+            "string": "Moğolistan"
+        },
+        {
+            "id": 27,
+            "string": "Yucatan"
+        },
+        {
+            "id": 28,
+            "string": "Tuz Bataklığı"
+        },
+        {
+            "id": 29,
+            "string": "Arena"
+        },
+        {
+            "id": 31,
+            "string": "Vaha"
+        },
+        {
+            "id": 32,
+            "string": "Hayalet Göl"
+        },
+        {
+            "id": 33,
+            "string": "Göçebe"
+        },
+        {
+            "id": 49,
+            "string": "İberya"
+        },
+        {
+            "id": 50,
+            "string": "Britanya"
+        },
+        {
+            "id": 51,
+            "string": "Orta Doğu"
+        },
+        {
+            "id": 52,
+            "string": "Teksas"
+        },
+        {
+            "id": 53,
+            "string": "İtalya"
+        },
+        {
+            "id": 54,
+            "string": "Orta Amerika"
+        },
+        {
+            "id": 55,
+            "string": "Fransa"
+        },
+        {
+            "id": 56,
+            "string": "İskandinav Toprakları"
+        },
+        {
+            "id": 57,
+            "string": "Japon Denizi (Doğu Denizi)"
+        },
+        {
+            "id": 58,
+            "string": "Bizans"
+        },
+        {
+            "id": 59,
+            "string": "Özel"
+        },
+        {
+            "id": 60,
+            "string": "Rastgele Kara Haritası"
+        },
+        {
+            "id": 62,
+            "string": "Rastgele Gerçek Dünya Haritası"
+        },
+        {
+            "id": 63,
+            "string": "Bütünüyle Rastgele"
+        },
+        {
+            "id": 65,
+            "string": "Rastgele Özel Harita"
+        },
+        {
+            "id": 66,
+            "string": "Rastgele Özel Harita"
+        },
+        {
+            "id": 67,
+            "string": "Akropolis"
+        },
+        {
+            "id": 68,
+            "string": "Budapeşte"
+        },
+        {
+            "id": 69,
+            "string": "Obruklar"
+        },
+        {
+            "id": 70,
+            "string": "Göller Yöresi"
+        },
+        {
+            "id": 71,
+            "string": "Altın Çukuru"
+        },
+        {
+            "id": 72,
+            "string": "Sığınak"
+        },
+        {
+            "id": 73,
+            "string": "Yüksek Kale"
+        },
+        {
+            "id": 74,
+            "string": "Lombardiya"
+        },
+        {
+            "id": 75,
+            "string": "Bozkır"
+        },
+        {
+            "id": 76,
+            "string": "Vadi"
+        },
+        {
+            "id": 77,
+            "string": "Mega Rastgele"
+        },
+        {
+            "id": 78,
+            "string": "Hamburger"
+        },
+        {
+            "id": 79,
+            "string": "KEEG Rastgele"
+        },
+        {
+            "id": 80,
+            "string": "KEEG Muson"
+        },
+        {
+            "id": 81,
+            "string": "KEEG Piramit İnişi"
+        },
+        {
+            "id": 82,
+            "string": "KEEG Spiral"
+        },
+        {
+            "id": 83,
+            "string": "Kilimanjaro"
+        },
+        {
+            "id": 84,
+            "string": "Dağ Geçidi"
+        },
+        {
+            "id": 85,
+            "string": "Nil Deltası"
+        },
+        {
+            "id": 86,
+            "string": "Serengeti"
+        },
+        {
+            "id": 87,
+            "string": "Sokotra"
+        },
+        {
+            "id": 88,
+            "string": "Amazon"
+        },
+        {
+            "id": 89,
+            "string": "Çin"
+        },
+        {
+            "id": 90,
+            "string": "Afrika Boynuzu"
+        },
+        {
+            "id": 91,
+            "string": "Hindistan"
+        },
+        {
+            "id": 92,
+            "string": "Madagaskar"
+        },
+        {
+            "id": 93,
+            "string": "Batı Afrika"
+        },
+        {
+            "id": 94,
+            "string": "Bohemya"
+        },
+        {
+            "id": 95,
+            "string": "Dünya"
+        },
+        {
+            "id": 96,
+            "string": "Kanyonlar"
+        },
+        {
+            "id": 97,
+            "string": "Düşman Takımada"
+        },
+        {
+            "id": 98,
+            "string": "Düşman Adalar"
+        },
+        {
+            "id": 99,
+            "string": "İlginç"
+        },
+        {
+            "id": 100,
+            "string": "Cephe Hattı"
+        },
+        {
+            "id": 101,
+            "string": "Yakın Çevre"
+        },
+        {
+            "id": 102,
+            "string": "Ana Kara"
+        },
+        {
+            "id": 103,
+            "string": "Açık Ovalar"
+        },
+        {
+            "id": 104,
+            "string": "Deniz Çemberi"
+        },
+        {
+            "id": 105,
+            "string": "Yılan Çukuru"
+        },
+        {
+            "id": 106,
+            "string": "Göz"
+        },
+        {
+            "id": 107,
+            "string": "Avustralya"
+        },
+        {
+            "id": 108,
+            "string": "Hindiçin"
+        },
+        {
+            "id": 109,
+            "string": "Endonezya"
+        },
+        {
+            "id": 110,
+            "string": "Malakka Boğazı"
+        },
+        {
+            "id": 111,
+            "string": "Filipinler"
+        },
+        {
+            "id": 112,
+            "string": "Bataklık Adaları"
+        },
+        {
+            "id": 113,
+            "string": "Mangrov Ağaçlığı"
+        },
+        {
+            "id": 114,
+            "string": "Pasifik Adaları"
+        },
+        {
+            "id": 115,
+            "string": "Kumsal"
+        },
+        {
+            "id": 116,
+            "string": "Su Göçebeleri"
+        },
+        {
+            "id": 117,
+            "string": "Ağaçlık Adalar"
+        },
+        {
+            "id": 118,
+            "string": "Kutsal Hat"
+        },
+        {
+            "id": 119,
+            "string": "Sınır Taşları"
+        },
+        {
+            "id": 120,
+            "string": "Yin Yang"
+        },
+        {
+            "id": 121,
+            "string": "Ağaçlık Yollar"
+        },
+        {
+            "id": 122,
+            "string": "Alp Gölleri"
+        },
+        {
+            "id": 123,
+            "string": "Bataklık"
+        },
+        {
+            "id": 124,
+            "string": "Dağ Sırtı"
+        },
+        {
+            "id": 125,
+            "string": "Dağ Geçitleri"
+        },
+        {
+            "id": 126,
+            "string": "Kurt Tepesi"
+        },
+        {
+            "id": 132,
+            "string": "Antarktika"
+        },
+        {
+            "id": 133,
+            "string": "Aral Sea"
+        },
+        {
+            "id": 134,
+            "string": "Black Sea"
+        },
+        {
+            "id": 135,
+            "string": "Caucasus"
+        },
+        {
+            "id": 136,
+            "string": "Caucasus"
+        },
+        {
+            "id": 137,
+            "string": "Özel Harita Havuzu"
+        },
+        {
+            "id": 138,
+            "string": "Özel Harita Havuzu"
+        },
+        {
+            "id": 139,
+            "string": "Altın Bataklık"
+        },
+        {
+            "id": 140,
+            "string": "Dört Göl"
+        },
+        {
+            "id": 141,
+            "string": "Kara Göçebesi"
+        },
+        {
+            "id": 142,
+            "string": "BR Battle On Ice"
+        },
+        {
+            "id": 143,
+            "string": "BR El Dorado"
+        },
+        {
+            "id": 144,
+            "string": "BR Fall of Axum"
+        },
+        {
+            "id": 145,
+            "string": "BR Fall of Rome"
+        },
+        {
+            "id": 146,
+            "string": "BR Majapahit Empire"
+        },
+        {
+            "id": 147,
+            "string": "Amazon Tunnel"
+        },
+        {
+            "id": 148,
+            "string": "Coastal Forest"
+        },
+        {
+            "id": 149,
+            "string": "African Clearing"
+        },
+        {
+            "id": 150,
+            "string": "Atacama"
+        },
+        {
+            "id": 151,
+            "string": "Seize the Mountain"
+        },
+        {
+            "id": 152,
+            "string": "Crater"
+        },
+        {
+            "id": 153,
+            "string": "Crossroads"
+        },
+        {
+            "id": 154,
+            "string": "Michi"
+        },
+        {
+            "id": 155,
+            "string": "Team Moats"
+        },
+        {
+            "id": 156,
+            "string": "Volcanic Island"
+        },
+        {
+            "id": 157,
+            "string": "Acclivity"
+        },
+        {
+            "id": 158,
+            "string": "Eruption"
+        },
+        {
+            "id": 159,
+            "string": "Frigid Lake"
+        },
+        {
+            "id": 160,
+            "string": "Greenland"
+        },
+        {
+            "id": 161,
+            "string": "Lowland"
+        },
+        {
+            "id": 162,
+            "string": "Marketplace"
+        },
+        {
+            "id": 163,
+            "string": "Meadow"
+        },
+        {
+            "id": 164,
+            "string": "Mountain Range"
+        },
+        {
+            "id": 165,
+            "string": "Northern Isles"
+        },
+        {
+            "id": 166,
+            "string": "Ring Fortress"
+        },
+        {
+            "id": 167,
+            "string": "Runestones"
+        },
+        {
+            "id": 168,
+            "string": "Aftermath"
+        },
+        {
+            "id": 169,
+            "string": "Enclosed"
+        },
+        {
+            "id": 170,
+            "string": "Haboob"
+        },
+        {
+            "id": 171,
+            "string": "Kawasan"
+        },
+        {
+            "id": 172,
+            "string": "Land Madness"
+        },
+        {
+            "id": 173,
+            "string": "Sacred Springs"
+        },
+        {
+            "id": 174,
+            "string": "Wade"
+        }
+    ],
+    "rating_type": [
+        {
+            "id": 0,
+            "string": "Sirasiz"
+        },
+        {
+            "id": 1,
+            "string": "Ölüm Karşılaşması"
+        },
+        {
+            "id": 2,
+            "string": "Rastgele Harita"
+        },
+        {
+            "id": 3,
+            "string": "Takım Ölüm Karşılaşması"
+        },
+        {
+            "id": 4,
+            "string": "Takım Rastgele Harita"
+        },
+        {
+            "id": 5,
+            "string": "1v1 Random Map Quick Play"
+        },
+        {
+            "id": 6,
+            "string": "Team Random Map Quick Play"
+        },
+        {
+            "id": 7,
+            "string": "1v1 Empire Wars Quick Play"
+        },
+        {
+            "id": 8,
+            "string": "Team Empire Wars Quick Play"
+        },
+        {
+            "id": 9,
+            "string": "Battle Royale Quick Play"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "resources": [
+        {
+            "id": 0,
+            "string": "Normal"
+        },
+        {
+            "id": 1,
+            "string": "Düşük"
+        },
+        {
+            "id": 2,
+            "string": "Orta"
+        },
+        {
+            "id": 3,
+            "string": "Yüksek"
+        },
+        {
+            "id": 4,
+            "string": "Çok Yüksek"
+        },
+        {
+            "id": 5,
+            "string": "Sonsuz"
+        },
+        {
+            "id": 6,
+            "string": "Rastgele"
+        }
+    ],
+    "speed": [
+        {
+            "id": 0,
+            "string": "Yavaş"
+        },
+        {
+            "id": 1,
+            "string": "Sıradan"
+        },
+        {
+            "id": 2,
+            "string": "Normal"
+        },
+        {
+            "id": 3,
+            "string": "Hızlı"
+        }
+    ],
+    "victory": [
+        {
+            "id": 1,
+            "string": "Fetih"
+        },
+        {
+            "id": 7,
+            "string": "Süre Kısıtlamalı"
+        },
+        {
+            "id": 8,
+            "string": "Puan"
+        },
+        {
+            "id": 9,
+            "string": "Normal"
+        },
+        {
+            "id": 11,
+            "string": "Sona Kalan"
+        }
+    ],
+    "visibility": [
+        {
+            "id": 0,
+            "string": "Normal"
+        },
+        {
+            "id": 1,
+            "string": "Keşfedilmiş"
+        },
+        {
+            "id": 2,
+            "string": "Tümü Görünür"
+        }
+    ]
+}

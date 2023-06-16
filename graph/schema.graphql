@@ -1,0 +1,103 @@
+# ------------------------------------------------------
+# THIS FILE WAS AUTOMATICALLY GENERATED (DO NOT MODIFY)
+# ------------------------------------------------------
+
+"""
+A date-time string at UTC, such as 2019-12-03T09:54:33Z, compliant with the date-time format.
+"""
+scalar DateTime
+
+type LeaderboardRow {
+  drops: Int
+  last_match_time: DateTime
+  leaderboard_id: Int!
+  losses: Int
+  profile: Profile!
+  profile_id: Int
+  rank: Int
+  rating: Int
+  streak: Int
+  wins: Int
+}
+
+type LeaderboardRowList {
+  leaderboard_rows: [LeaderboardRow!]!
+  total: Int!
+}
+
+type Match {
+  finished: DateTime
+  leaderboard_id: Int
+  location: Int
+  match_id: Float!
+  name: String!
+  num_players: Int!
+  players: [Player!]!
+  replayed: Int
+  speed: Int
+  started: DateTime!
+}
+
+type MatchList {
+  matches: [Match!]!
+  total: Int!
+}
+
+union MatchOrMatchList = Match | MatchList
+
+type Player {
+  civ: Int
+  color: Int
+  match_id: String!
+  profile: Profile!
+  profile_id: Int!
+  slot: Int!
+  team: Int
+  won: Boolean
+}
+
+type Profile {
+  avatarhash: String
+  clan: String
+  country: String
+  last_match_time: DateTime
+  leaderboards: [LeaderboardRow!]!
+  name: String
+  profile_id: Float!
+  stats: [Stats!]!
+  steam_id: String
+}
+
+type Query {
+  leaderboard_rows(count: Int!, leaderboard_id: Int!, search: String, start: Int!): LeaderboardRowList!
+  match(match_id: Float, match_uuid: String): Match!
+  matches(count: Int!, leaderboard_id: Int, profile_ids: [Int!]!, start: Int!): MatchList!
+  ongoingMatches: MatchList!
+  profile(profile_id: Int): Profile!
+}
+
+type Stats {
+  allies: [StatsEntry!]!
+  civ: [StatsEntry!]!
+  leaderboard_id: Int!
+  location: [StatsEntry!]!
+  opponents: [StatsEntry!]!
+}
+
+type StatsEntry {
+  civ: Int
+  country: String
+  games: Int!
+  location: Int
+  name: String
+  profile_id: Int
+  wins: Int!
+}
+
+type Subscription {
+  lobbiesUpdatedSub: String!
+  matchStartedSub: Match!
+  matchSub(profile_id: Int): Match!
+  ongoingMatchesSub: MatchOrMatchList!
+  ongoingMatchesUpdatedSub: String!
+}

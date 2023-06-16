@@ -1,0 +1,1025 @@
+{
+    "language": "zh-TW",
+    "age": [
+        {
+            "id": 0,
+            "string": "標準"
+        },
+        {
+            "id": 2,
+            "string": "黑暗時代"
+        },
+        {
+            "id": 3,
+            "string": "封建時代"
+        },
+        {
+            "id": 4,
+            "string": "城堡時代"
+        },
+        {
+            "id": 5,
+            "string": "帝王時代"
+        },
+        {
+            "id": 6,
+            "string": "後帝王時代"
+        }
+    ],
+    "civ": [
+        {
+            "id": 1,
+            "string": "不列顛人"
+        },
+        {
+            "id": 2,
+            "string": "法蘭克人"
+        },
+        {
+            "id": 3,
+            "string": "哥德人"
+        },
+        {
+            "id": 4,
+            "string": "條頓人"
+        },
+        {
+            "id": 5,
+            "string": "日本人"
+        },
+        {
+            "id": 6,
+            "string": "中國人"
+        },
+        {
+            "id": 7,
+            "string": "拜占庭人"
+        },
+        {
+            "id": 8,
+            "string": "波斯人"
+        },
+        {
+            "id": 9,
+            "string": "薩拉森人"
+        },
+        {
+            "id": 10,
+            "string": "土耳其人"
+        },
+        {
+            "id": 11,
+            "string": "維京人"
+        },
+        {
+            "id": 12,
+            "string": "蒙古人"
+        },
+        {
+            "id": 13,
+            "string": "塞爾特人"
+        },
+        {
+            "id": 14,
+            "string": "西班牙人"
+        },
+        {
+            "id": 15,
+            "string": "阿茲特克人"
+        },
+        {
+            "id": 16,
+            "string": "馬雅人"
+        },
+        {
+            "id": 17,
+            "string": "匈人"
+        },
+        {
+            "id": 18,
+            "string": "朝鮮人"
+        },
+        {
+            "id": 19,
+            "string": "義大利人"
+        },
+        {
+            "id": 20,
+            "string": "Hindustanis"
+        },
+        {
+            "id": 21,
+            "string": "印加人"
+        },
+        {
+            "id": 22,
+            "string": "馬札爾人"
+        },
+        {
+            "id": 23,
+            "string": "斯拉夫人"
+        },
+        {
+            "id": 24,
+            "string": "葡萄牙人"
+        },
+        {
+            "id": 25,
+            "string": "衣索比亞人"
+        },
+        {
+            "id": 26,
+            "string": "馬利人"
+        },
+        {
+            "id": 27,
+            "string": "柏柏人"
+        },
+        {
+            "id": 28,
+            "string": "高棉人"
+        },
+        {
+            "id": 29,
+            "string": "馬來人"
+        },
+        {
+            "id": 30,
+            "string": "緬甸人"
+        },
+        {
+            "id": 31,
+            "string": "越南人"
+        },
+        {
+            "id": 32,
+            "string": "保加利亞人"
+        },
+        {
+            "id": 33,
+            "string": "韃靼人"
+        },
+        {
+            "id": 34,
+            "string": "庫曼人"
+        },
+        {
+            "id": 35,
+            "string": "立陶宛人"
+        },
+        {
+            "id": 36,
+            "string": "Burgundians"
+        },
+        {
+            "id": 37,
+            "string": "Sicilians"
+        },
+        {
+            "id": 38,
+            "string": "Poles"
+        },
+        {
+            "id": 39,
+            "string": "Bohemians"
+        },
+        {
+            "id": 40,
+            "string": "Dravidians"
+        },
+        {
+            "id": 41,
+            "string": "Bengalis"
+        },
+        {
+            "id": 42,
+            "string": "Gurjaras"
+        },
+        {
+            "id": 99,
+            "string": "印度人"
+        }
+    ],
+    "game_type": [
+        {
+            "id": 0,
+            "string": "隨機地圖"
+        },
+        {
+            "id": 1,
+            "string": "弒君模式"
+        },
+        {
+            "id": 2,
+            "string": "死亡競賽"
+        },
+        {
+            "id": 3,
+            "string": "劇本"
+        },
+        {
+            "id": 6,
+            "string": "佔山為王"
+        },
+        {
+            "id": 7,
+            "string": "世界奇觀競賽"
+        },
+        {
+            "id": 8,
+            "string": "保護世界奇觀"
+        },
+        {
+            "id": 9,
+            "string": "加速隨機地圖"
+        },
+        {
+            "id": 10,
+            "string": "爭奪聖物"
+        },
+        {
+            "id": 11,
+            "string": "主城保衛戰"
+        },
+        {
+            "id": 12,
+            "string": "Battle Royale"
+        },
+        {
+            "id": 13,
+            "string": "帝國戰爭"
+        },
+        {
+            "id": 15,
+            "string": "Co-Op Campaign"
+        }
+    ],
+    "leaderboard": [
+        {
+            "id": 0,
+            "string": "未排名"
+        },
+        {
+            "id": 1,
+            "string": "死亡競賽"
+        },
+        {
+            "id": 2,
+            "string": "隊伍死亡競賽"
+        },
+        {
+            "id": 3,
+            "string": "隨機地圖"
+        },
+        {
+            "id": 4,
+            "string": "隊伍隨機地圖"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "map_size": [
+        {
+            "id": 0,
+            "string": "微型 (2 位玩家)"
+        },
+        {
+            "id": 1,
+            "string": "小型 (3 位玩家)"
+        },
+        {
+            "id": 2,
+            "string": "中型 (4 位玩家)"
+        },
+        {
+            "id": 3,
+            "string": "正常 (6 位玩家)"
+        },
+        {
+            "id": 4,
+            "string": "大型 (8 位玩家)"
+        },
+        {
+            "id": 5,
+            "string": "巨型"
+        },
+        {
+            "id": 6,
+            "string": "超大"
+        }
+    ],
+    "map_type": [
+        {
+            "id": 9,
+            "string": "阿拉伯"
+        },
+        {
+            "id": 10,
+            "string": "群島"
+        },
+        {
+            "id": 11,
+            "string": "波羅的海"
+        },
+        {
+            "id": 12,
+            "string": "黑森林"
+        },
+        {
+            "id": 13,
+            "string": "沿海"
+        },
+        {
+            "id": 14,
+            "string": "歐陸"
+        },
+        {
+            "id": 15,
+            "string": "火山湖"
+        },
+        {
+            "id": 16,
+            "string": "要塞"
+        },
+        {
+            "id": 17,
+            "string": "淘金潮"
+        },
+        {
+            "id": 18,
+            "string": "高原"
+        },
+        {
+            "id": 19,
+            "string": "島嶼"
+        },
+        {
+            "id": 20,
+            "string": "地中海"
+        },
+        {
+            "id": 21,
+            "string": "遷移"
+        },
+        {
+            "id": 22,
+            "string": "河流"
+        },
+        {
+            "id": 23,
+            "string": "團隊島嶼"
+        },
+        {
+            "id": 24,
+            "string": "完全隨機地圖"
+        },
+        {
+            "id": 25,
+            "string": "斯堪的納維亞"
+        },
+        {
+            "id": 26,
+            "string": "蒙古"
+        },
+        {
+            "id": 27,
+            "string": "猶加敦"
+        },
+        {
+            "id": 28,
+            "string": "鹽鹼沼澤"
+        },
+        {
+            "id": 29,
+            "string": "競技場"
+        },
+        {
+            "id": 31,
+            "string": "綠洲"
+        },
+        {
+            "id": 32,
+            "string": "幽靈湖"
+        },
+        {
+            "id": 33,
+            "string": "游牧"
+        },
+        {
+            "id": 49,
+            "string": "伊比利亞"
+        },
+        {
+            "id": 50,
+            "string": "不列顛"
+        },
+        {
+            "id": 51,
+            "string": "中東"
+        },
+        {
+            "id": 52,
+            "string": "德克薩斯"
+        },
+        {
+            "id": 53,
+            "string": "義大利"
+        },
+        {
+            "id": 54,
+            "string": "中美洲"
+        },
+        {
+            "id": 55,
+            "string": "法蘭西"
+        },
+        {
+            "id": 56,
+            "string": "北歐"
+        },
+        {
+            "id": 57,
+            "string": "日本海 (東海)"
+        },
+        {
+            "id": 58,
+            "string": "拜占庭"
+        },
+        {
+            "id": 59,
+            "string": "自訂"
+        },
+        {
+            "id": 60,
+            "string": "隨機陸地地圖"
+        },
+        {
+            "id": 62,
+            "string": "隨機真實世界地圖"
+        },
+        {
+            "id": 63,
+            "string": "絕對隨機地圖"
+        },
+        {
+            "id": 65,
+            "string": "隨機特殊地圖"
+        },
+        {
+            "id": 66,
+            "string": "隨機特殊地圖"
+        },
+        {
+            "id": 67,
+            "string": "衛城"
+        },
+        {
+            "id": 68,
+            "string": "布達佩斯"
+        },
+        {
+            "id": 69,
+            "string": "巖坑池地"
+        },
+        {
+            "id": 70,
+            "string": "百湖之城"
+        },
+        {
+            "id": 71,
+            "string": "黃金谷"
+        },
+        {
+            "id": 72,
+            "string": "藏身之處"
+        },
+        {
+            "id": 73,
+            "string": "山寨"
+        },
+        {
+            "id": 74,
+            "string": "倫巴底"
+        },
+        {
+            "id": 75,
+            "string": "大草原"
+        },
+        {
+            "id": 76,
+            "string": "峽谷"
+        },
+        {
+            "id": 77,
+            "string": "超級隨機"
+        },
+        {
+            "id": 78,
+            "string": "漢堡"
+        },
+        {
+            "id": 79,
+            "string": "爭奪聖物隨機地圖"
+        },
+        {
+            "id": 80,
+            "string": "爭奪聖物雨季沼澤"
+        },
+        {
+            "id": 81,
+            "string": "爭奪聖物決戰金字塔之巔"
+        },
+        {
+            "id": 82,
+            "string": "爭奪聖物漩渦迷航"
+        },
+        {
+            "id": 83,
+            "string": "乞力馬扎羅山"
+        },
+        {
+            "id": 84,
+            "string": "雪山地"
+        },
+        {
+            "id": 85,
+            "string": "尼羅河三角洲"
+        },
+        {
+            "id": 86,
+            "string": "塞倫蓋蒂平原"
+        },
+        {
+            "id": 87,
+            "string": "索科特拉島"
+        },
+        {
+            "id": 88,
+            "string": "亞馬遜流域"
+        },
+        {
+            "id": 89,
+            "string": "華夏"
+        },
+        {
+            "id": 90,
+            "string": "非洲之角"
+        },
+        {
+            "id": 91,
+            "string": "印度"
+        },
+        {
+            "id": 92,
+            "string": "馬達加斯加島"
+        },
+        {
+            "id": 93,
+            "string": "西非"
+        },
+        {
+            "id": 94,
+            "string": "波希米亞"
+        },
+        {
+            "id": 95,
+            "string": "世界"
+        },
+        {
+            "id": 96,
+            "string": "大峽谷"
+        },
+        {
+            "id": 97,
+            "string": "敵隊群島"
+        },
+        {
+            "id": 98,
+            "string": "敵隊大島"
+        },
+        {
+            "id": 99,
+            "string": "塞外"
+        },
+        {
+            "id": 100,
+            "string": "前線"
+        },
+        {
+            "id": 101,
+            "string": "內圈"
+        },
+        {
+            "id": 102,
+            "string": "故土"
+        },
+        {
+            "id": 103,
+            "string": "開闊草原"
+        },
+        {
+            "id": 104,
+            "string": "水環"
+        },
+        {
+            "id": 105,
+            "string": "羊腸小道"
+        },
+        {
+            "id": 106,
+            "string": "眼睛"
+        },
+        {
+            "id": 107,
+            "string": "澳洲"
+        },
+        {
+            "id": 108,
+            "string": "中南半島"
+        },
+        {
+            "id": 109,
+            "string": "印尼"
+        },
+        {
+            "id": 110,
+            "string": "馬六甲海峽"
+        },
+        {
+            "id": 111,
+            "string": "菲律賓"
+        },
+        {
+            "id": 112,
+            "string": "禁閉島"
+        },
+        {
+            "id": 113,
+            "string": "紅樹林"
+        },
+        {
+            "id": 114,
+            "string": "太平洋島嶼"
+        },
+        {
+            "id": 115,
+            "string": "沙壩"
+        },
+        {
+            "id": 116,
+            "string": "水上游牧"
+        },
+        {
+            "id": 117,
+            "string": "叢林島嶼"
+        },
+        {
+            "id": 118,
+            "string": "聖界"
+        },
+        {
+            "id": 119,
+            "string": "石界"
+        },
+        {
+            "id": 120,
+            "string": "陰陽"
+        },
+        {
+            "id": 121,
+            "string": "叢林小道"
+        },
+        {
+            "id": 122,
+            "string": "高山湖泊"
+        },
+        {
+            "id": 123,
+            "string": "沼澤"
+        },
+        {
+            "id": 124,
+            "string": "山脊"
+        },
+        {
+            "id": 125,
+            "string": "山澗"
+        },
+        {
+            "id": 126,
+            "string": "狼山"
+        },
+        {
+            "id": 132,
+            "string": "南極"
+        },
+        {
+            "id": 133,
+            "string": "Aral Sea"
+        },
+        {
+            "id": 134,
+            "string": "Black Sea"
+        },
+        {
+            "id": 135,
+            "string": "Caucasus"
+        },
+        {
+            "id": 136,
+            "string": "Caucasus"
+        },
+        {
+            "id": 137,
+            "string": "自訂地圖池"
+        },
+        {
+            "id": 138,
+            "string": "自訂地圖池"
+        },
+        {
+            "id": 139,
+            "string": "金沼澤"
+        },
+        {
+            "id": 140,
+            "string": "四座湖泊"
+        },
+        {
+            "id": 141,
+            "string": "陸地游牧"
+        },
+        {
+            "id": 142,
+            "string": "BR Battle On Ice"
+        },
+        {
+            "id": 143,
+            "string": "BR El Dorado"
+        },
+        {
+            "id": 144,
+            "string": "BR Fall of Axum"
+        },
+        {
+            "id": 145,
+            "string": "BR Fall of Rome"
+        },
+        {
+            "id": 146,
+            "string": "BR Majapahit Empire"
+        },
+        {
+            "id": 147,
+            "string": "Amazon Tunnel"
+        },
+        {
+            "id": 148,
+            "string": "Coastal Forest"
+        },
+        {
+            "id": 149,
+            "string": "African Clearing"
+        },
+        {
+            "id": 150,
+            "string": "Atacama"
+        },
+        {
+            "id": 151,
+            "string": "Seize the Mountain"
+        },
+        {
+            "id": 152,
+            "string": "Crater"
+        },
+        {
+            "id": 153,
+            "string": "Crossroads"
+        },
+        {
+            "id": 154,
+            "string": "Michi"
+        },
+        {
+            "id": 155,
+            "string": "Team Moats"
+        },
+        {
+            "id": 156,
+            "string": "Volcanic Island"
+        },
+        {
+            "id": 157,
+            "string": "Acclivity"
+        },
+        {
+            "id": 158,
+            "string": "Eruption"
+        },
+        {
+            "id": 159,
+            "string": "Frigid Lake"
+        },
+        {
+            "id": 160,
+            "string": "Greenland"
+        },
+        {
+            "id": 161,
+            "string": "Lowland"
+        },
+        {
+            "id": 162,
+            "string": "Marketplace"
+        },
+        {
+            "id": 163,
+            "string": "Meadow"
+        },
+        {
+            "id": 164,
+            "string": "Mountain Range"
+        },
+        {
+            "id": 165,
+            "string": "Northern Isles"
+        },
+        {
+            "id": 166,
+            "string": "Ring Fortress"
+        },
+        {
+            "id": 167,
+            "string": "Runestones"
+        },
+        {
+            "id": 168,
+            "string": "Aftermath"
+        },
+        {
+            "id": 169,
+            "string": "Enclosed"
+        },
+        {
+            "id": 170,
+            "string": "Haboob"
+        },
+        {
+            "id": 171,
+            "string": "Kawasan"
+        },
+        {
+            "id": 172,
+            "string": "Land Madness"
+        },
+        {
+            "id": 173,
+            "string": "Sacred Springs"
+        },
+        {
+            "id": 174,
+            "string": "Wade"
+        }
+    ],
+    "rating_type": [
+        {
+            "id": 0,
+            "string": "未排名"
+        },
+        {
+            "id": 1,
+            "string": "死亡競賽"
+        },
+        {
+            "id": 2,
+            "string": "隨機地圖"
+        },
+        {
+            "id": 3,
+            "string": "隊伍死亡競賽"
+        },
+        {
+            "id": 4,
+            "string": "隊伍隨機地圖"
+        },
+        {
+            "id": 5,
+            "string": "1v1 Random Map Quick Play"
+        },
+        {
+            "id": 6,
+            "string": "Team Random Map Quick Play"
+        },
+        {
+            "id": 7,
+            "string": "1v1 Empire Wars Quick Play"
+        },
+        {
+            "id": 8,
+            "string": "Team Empire Wars Quick Play"
+        },
+        {
+            "id": 9,
+            "string": "Battle Royale Quick Play"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "resources": [
+        {
+            "id": 0,
+            "string": "標準"
+        },
+        {
+            "id": 1,
+            "string": "低"
+        },
+        {
+            "id": 2,
+            "string": "中"
+        },
+        {
+            "id": 3,
+            "string": "高"
+        },
+        {
+            "id": 4,
+            "string": "超高"
+        },
+        {
+            "id": 5,
+            "string": "無限"
+        },
+        {
+            "id": 6,
+            "string": "隨機"
+        }
+    ],
+    "speed": [
+        {
+            "id": 0,
+            "string": "慢"
+        },
+        {
+            "id": 1,
+            "string": "隨意"
+        },
+        {
+            "id": 2,
+            "string": "普通"
+        },
+        {
+            "id": 3,
+            "string": "快"
+        }
+    ],
+    "victory": [
+        {
+            "id": 1,
+            "string": "征服"
+        },
+        {
+            "id": 7,
+            "string": "時間限制"
+        },
+        {
+            "id": 8,
+            "string": "得分"
+        },
+        {
+            "id": 9,
+            "string": "標準"
+        },
+        {
+            "id": 11,
+            "string": "最後生存者"
+        }
+    ],
+    "visibility": [
+        {
+            "id": 0,
+            "string": "普通"
+        },
+        {
+            "id": 1,
+            "string": "已探索"
+        },
+        {
+            "id": 2,
+            "string": "全部可見"
+        }
+    ]
+}

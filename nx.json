@@ -1,0 +1,25 @@
+{
+  "npmScope": "nex",
+  "affected": {
+    "defaultBase": "master"
+  },
+  "implicitDependencies": {
+    "workspace.json": "*",
+    "package.json": {
+      "dependencies": "*",
+      "devDependencies": "*"
+    },
+    "tsconfig.base.json": "*",
+    "nx.json": "*",
+    ".eslintrc.json": "*"
+  },
+  "tasksRunnerOptions": {},
+  "projects": {
+    "collector": {
+      "tags": []
+    },
+    "graph": {
+      "tags": []
+    }
+  }
+}

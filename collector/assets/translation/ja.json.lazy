@@ -1,0 +1,1025 @@
+{
+    "language": "ja",
+    "age": [
+        {
+            "id": 0,
+            "string": "標準"
+        },
+        {
+            "id": 2,
+            "string": "暗黒の時代"
+        },
+        {
+            "id": 3,
+            "string": "領主の時代"
+        },
+        {
+            "id": 4,
+            "string": "城主の時代"
+        },
+        {
+            "id": 5,
+            "string": "帝王の時代"
+        },
+        {
+            "id": 6,
+            "string": "帝王の時代以降"
+        }
+    ],
+    "civ": [
+        {
+            "id": 1,
+            "string": "ブリトン"
+        },
+        {
+            "id": 2,
+            "string": "フランク"
+        },
+        {
+            "id": 3,
+            "string": "ゴート"
+        },
+        {
+            "id": 4,
+            "string": "チュートン"
+        },
+        {
+            "id": 5,
+            "string": "日本"
+        },
+        {
+            "id": 6,
+            "string": "中国"
+        },
+        {
+            "id": 7,
+            "string": "ビザンティン"
+        },
+        {
+            "id": 8,
+            "string": "ペルシア"
+        },
+        {
+            "id": 9,
+            "string": "サラセン"
+        },
+        {
+            "id": 10,
+            "string": "オスマン帝国"
+        },
+        {
+            "id": 11,
+            "string": "バイキング"
+        },
+        {
+            "id": 12,
+            "string": "モンゴル"
+        },
+        {
+            "id": 13,
+            "string": "ケルト"
+        },
+        {
+            "id": 14,
+            "string": "スペイン"
+        },
+        {
+            "id": 15,
+            "string": "アステカ"
+        },
+        {
+            "id": 16,
+            "string": "マヤ"
+        },
+        {
+            "id": 17,
+            "string": "フン"
+        },
+        {
+            "id": 18,
+            "string": "朝鮮"
+        },
+        {
+            "id": 19,
+            "string": "イタリア"
+        },
+        {
+            "id": 20,
+            "string": "Hindustanis"
+        },
+        {
+            "id": 21,
+            "string": "インカ"
+        },
+        {
+            "id": 22,
+            "string": "マジャール"
+        },
+        {
+            "id": 23,
+            "string": "スラヴ"
+        },
+        {
+            "id": 24,
+            "string": "ポルトガル"
+        },
+        {
+            "id": 25,
+            "string": "エチオピア"
+        },
+        {
+            "id": 26,
+            "string": "マリ"
+        },
+        {
+            "id": 27,
+            "string": "ベルベル"
+        },
+        {
+            "id": 28,
+            "string": "クメール"
+        },
+        {
+            "id": 29,
+            "string": "マレー"
+        },
+        {
+            "id": 30,
+            "string": "ビルマ"
+        },
+        {
+            "id": 31,
+            "string": "ベトナム"
+        },
+        {
+            "id": 32,
+            "string": "ブルガリア"
+        },
+        {
+            "id": 33,
+            "string": "タタール"
+        },
+        {
+            "id": 34,
+            "string": "クマン"
+        },
+        {
+            "id": 35,
+            "string": "リトアニア"
+        },
+        {
+            "id": 36,
+            "string": "Burgundians"
+        },
+        {
+            "id": 37,
+            "string": "Sicilians"
+        },
+        {
+            "id": 38,
+            "string": "Poles"
+        },
+        {
+            "id": 39,
+            "string": "Bohemians"
+        },
+        {
+            "id": 40,
+            "string": "Dravidians"
+        },
+        {
+            "id": 41,
+            "string": "Bengalis"
+        },
+        {
+            "id": 42,
+            "string": "Gurjaras"
+        },
+        {
+            "id": 99,
+            "string": "インド"
+        }
+    ],
+    "game_type": [
+        {
+            "id": 0,
+            "string": "ランダム マップ"
+        },
+        {
+            "id": 1,
+            "string": "チェックメイト"
+        },
+        {
+            "id": 2,
+            "string": "デス マッチ"
+        },
+        {
+            "id": 3,
+            "string": "シナリオ"
+        },
+        {
+            "id": 6,
+            "string": "キング オブ ザ ヒル"
+        },
+        {
+            "id": 7,
+            "string": "民族の象徴の建造"
+        },
+        {
+            "id": 8,
+            "string": "民族の象徴の防衛"
+        },
+        {
+            "id": 9,
+            "string": "ターボ ランダム マップ"
+        },
+        {
+            "id": 10,
+            "string": "聖なる箱の確保"
+        },
+        {
+            "id": 11,
+            "string": "サドンデス"
+        },
+        {
+            "id": 12,
+            "string": "Battle Royale"
+        },
+        {
+            "id": 13,
+            "string": "エンパイア ウォーズ"
+        },
+        {
+            "id": 15,
+            "string": "Co-Op Campaign"
+        }
+    ],
+    "leaderboard": [
+        {
+            "id": 0,
+            "string": "ノーレート"
+        },
+        {
+            "id": 1,
+            "string": "デス マッチ"
+        },
+        {
+            "id": 2,
+            "string": "チーム デス マッチ"
+        },
+        {
+            "id": 3,
+            "string": "ランダム マップ"
+        },
+        {
+            "id": 4,
+            "string": "チーム ランダム マップ"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "map_size": [
+        {
+            "id": 0,
+            "string": "極小 (2 プレイヤー)"
+        },
+        {
+            "id": 1,
+            "string": "小 (3 プレイヤー)"
+        },
+        {
+            "id": 2,
+            "string": "中 (4 プレイヤー)"
+        },
+        {
+            "id": 3,
+            "string": "大 (6 プレイヤー)"
+        },
+        {
+            "id": 4,
+            "string": "広大 (8 プレイヤー)"
+        },
+        {
+            "id": 5,
+            "string": "特大"
+        },
+        {
+            "id": 6,
+            "string": "超特大"
+        }
+    ],
+    "map_type": [
+        {
+            "id": 9,
+            "string": "アラビア"
+        },
+        {
+            "id": 10,
+            "string": "列島"
+        },
+        {
+            "id": 11,
+            "string": "バルト海"
+        },
+        {
+            "id": 12,
+            "string": "大森林"
+        },
+        {
+            "id": 13,
+            "string": "沿岸"
+        },
+        {
+            "id": 14,
+            "string": "大陸"
+        },
+        {
+            "id": 15,
+            "string": "カルデラ湖"
+        },
+        {
+            "id": 16,
+            "string": "要塞"
+        },
+        {
+            "id": 17,
+            "string": "大金脈"
+        },
+        {
+            "id": 18,
+            "string": "高地"
+        },
+        {
+            "id": 19,
+            "string": "島々"
+        },
+        {
+            "id": 20,
+            "string": "内海"
+        },
+        {
+            "id": 21,
+            "string": "移住"
+        },
+        {
+            "id": 22,
+            "string": "流域"
+        },
+        {
+            "id": 23,
+            "string": "チームごとの島"
+        },
+        {
+            "id": 24,
+            "string": "フル ランダム"
+        },
+        {
+            "id": 25,
+            "string": "スカンディナビア"
+        },
+        {
+            "id": 26,
+            "string": "モンゴリア"
+        },
+        {
+            "id": 27,
+            "string": "ユカタン"
+        },
+        {
+            "id": 28,
+            "string": "海辺の沼地"
+        },
+        {
+            "id": 29,
+            "string": "アリーナ"
+        },
+        {
+            "id": 31,
+            "string": "オアシス"
+        },
+        {
+            "id": 32,
+            "string": "凍結湖"
+        },
+        {
+            "id": 33,
+            "string": "遊牧"
+        },
+        {
+            "id": 49,
+            "string": "イベリア"
+        },
+        {
+            "id": 50,
+            "string": "イギリス"
+        },
+        {
+            "id": 51,
+            "string": "中東"
+        },
+        {
+            "id": 52,
+            "string": "テキサス"
+        },
+        {
+            "id": 53,
+            "string": "イタリア"
+        },
+        {
+            "id": 54,
+            "string": "中央アメリカ"
+        },
+        {
+            "id": 55,
+            "string": "フランス"
+        },
+        {
+            "id": 56,
+            "string": "北欧"
+        },
+        {
+            "id": 57,
+            "string": "日本海"
+        },
+        {
+            "id": 58,
+            "string": "ビザンティン"
+        },
+        {
+            "id": 59,
+            "string": "カスタム"
+        },
+        {
+            "id": 60,
+            "string": "ランダムな陸地マップ"
+        },
+        {
+            "id": 62,
+            "string": "ランダム リアル ワールド マップ"
+        },
+        {
+            "id": 63,
+            "string": "ブラインド ランダム"
+        },
+        {
+            "id": 65,
+            "string": "ランダム スペシャル マップ"
+        },
+        {
+            "id": 66,
+            "string": "ランダム スペシャル マップ"
+        },
+        {
+            "id": 67,
+            "string": "アクロポリス"
+        },
+        {
+            "id": 68,
+            "string": "ブダペスト"
+        },
+        {
+            "id": 69,
+            "string": "セノーテ"
+        },
+        {
+            "id": 70,
+            "string": "湖の街"
+        },
+        {
+            "id": 71,
+            "string": "金鉱"
+        },
+        {
+            "id": 72,
+            "string": "隠れ家"
+        },
+        {
+            "id": 73,
+            "string": "丘の砦"
+        },
+        {
+            "id": 74,
+            "string": "ロンバルディア"
+        },
+        {
+            "id": 75,
+            "string": "大草原"
+        },
+        {
+            "id": 76,
+            "string": "盆地"
+        },
+        {
+            "id": 77,
+            "string": "メガランダム"
+        },
+        {
+            "id": 78,
+            "string": "ハンバーガー"
+        },
+        {
+            "id": 79,
+            "string": "CtR ランダム"
+        },
+        {
+            "id": 80,
+            "string": "CtR モンスーン"
+        },
+        {
+            "id": 81,
+            "string": "CtR ピラミッド"
+        },
+        {
+            "id": 82,
+            "string": "CtR スパイラル"
+        },
+        {
+            "id": 83,
+            "string": "キリマンジャロ"
+        },
+        {
+            "id": 84,
+            "string": "峠"
+        },
+        {
+            "id": 85,
+            "string": "ナイル デルタ"
+        },
+        {
+            "id": 86,
+            "string": "セレンゲティ"
+        },
+        {
+            "id": 87,
+            "string": "ソコトラ島"
+        },
+        {
+            "id": 88,
+            "string": "アマゾン"
+        },
+        {
+            "id": 89,
+            "string": "中国"
+        },
+        {
+            "id": 90,
+            "string": "アフリカの角"
+        },
+        {
+            "id": 91,
+            "string": "インド"
+        },
+        {
+            "id": 92,
+            "string": "マダガスカル"
+        },
+        {
+            "id": 93,
+            "string": "西アフリカ"
+        },
+        {
+            "id": 94,
+            "string": "ボヘミア"
+        },
+        {
+            "id": 95,
+            "string": "アース"
+        },
+        {
+            "id": 96,
+            "string": "谷間"
+        },
+        {
+            "id": 97,
+            "string": "群島"
+        },
+        {
+            "id": 98,
+            "string": "サバイバル アイランド"
+        },
+        {
+            "id": 99,
+            "string": "ファー アウト"
+        },
+        {
+            "id": 100,
+            "string": "最前線"
+        },
+        {
+            "id": 101,
+            "string": "内輪"
+        },
+        {
+            "id": 102,
+            "string": "母なる地"
+        },
+        {
+            "id": 103,
+            "string": "大平原"
+        },
+        {
+            "id": 104,
+            "string": "水の輪"
+        },
+        {
+            "id": 105,
+            "string": "蛇の穴"
+        },
+        {
+            "id": 106,
+            "string": "眼"
+        },
+        {
+            "id": 107,
+            "string": "オーストラリア"
+        },
+        {
+            "id": 108,
+            "string": "インドシナ"
+        },
+        {
+            "id": 109,
+            "string": "インドネシア"
+        },
+        {
+            "id": 110,
+            "string": "マラッカ海峡"
+        },
+        {
+            "id": 111,
+            "string": "フィリピン"
+        },
+        {
+            "id": 112,
+            "string": "沼地の島"
+        },
+        {
+            "id": 113,
+            "string": "マングローブのジャングル"
+        },
+        {
+            "id": 114,
+            "string": "太平洋の島々"
+        },
+        {
+            "id": 115,
+            "string": "中州"
+        },
+        {
+            "id": 116,
+            "string": "海の民"
+        },
+        {
+            "id": 117,
+            "string": "ジャングルの島"
+        },
+        {
+            "id": 118,
+            "string": "聖なる線"
+        },
+        {
+            "id": 119,
+            "string": "石の国境"
+        },
+        {
+            "id": 120,
+            "string": "陰陽"
+        },
+        {
+            "id": 121,
+            "string": "ジャングルの小道"
+        },
+        {
+            "id": 122,
+            "string": "山岳湖"
+        },
+        {
+            "id": 123,
+            "string": "沼沢地"
+        },
+        {
+            "id": 124,
+            "string": "尾根"
+        },
+        {
+            "id": 125,
+            "string": "山峡"
+        },
+        {
+            "id": 126,
+            "string": "狼山"
+        },
+        {
+            "id": 132,
+            "string": "最果ての地"
+        },
+        {
+            "id": 133,
+            "string": "Aral Sea"
+        },
+        {
+            "id": 134,
+            "string": "Black Sea"
+        },
+        {
+            "id": 135,
+            "string": "Caucasus"
+        },
+        {
+            "id": 136,
+            "string": "Caucasus"
+        },
+        {
+            "id": 137,
+            "string": "カスタム マップ プール"
+        },
+        {
+            "id": 138,
+            "string": "カスタム マップ プール"
+        },
+        {
+            "id": 139,
+            "string": "黄金の沼"
+        },
+        {
+            "id": 140,
+            "string": "4 つの湖"
+        },
+        {
+            "id": 141,
+            "string": "土地遊牧民"
+        },
+        {
+            "id": 142,
+            "string": "BR Battle On Ice"
+        },
+        {
+            "id": 143,
+            "string": "BR El Dorado"
+        },
+        {
+            "id": 144,
+            "string": "BR Fall of Axum"
+        },
+        {
+            "id": 145,
+            "string": "BR Fall of Rome"
+        },
+        {
+            "id": 146,
+            "string": "BR Majapahit Empire"
+        },
+        {
+            "id": 147,
+            "string": "Amazon Tunnel"
+        },
+        {
+            "id": 148,
+            "string": "Coastal Forest"
+        },
+        {
+            "id": 149,
+            "string": "African Clearing"
+        },
+        {
+            "id": 150,
+            "string": "Atacama"
+        },
+        {
+            "id": 151,
+            "string": "Seize the Mountain"
+        },
+        {
+            "id": 152,
+            "string": "Crater"
+        },
+        {
+            "id": 153,
+            "string": "Crossroads"
+        },
+        {
+            "id": 154,
+            "string": "Michi"
+        },
+        {
+            "id": 155,
+            "string": "Team Moats"
+        },
+        {
+            "id": 156,
+            "string": "Volcanic Island"
+        },
+        {
+            "id": 157,
+            "string": "Acclivity"
+        },
+        {
+            "id": 158,
+            "string": "Eruption"
+        },
+        {
+            "id": 159,
+            "string": "Frigid Lake"
+        },
+        {
+            "id": 160,
+            "string": "Greenland"
+        },
+        {
+            "id": 161,
+            "string": "Lowland"
+        },
+        {
+            "id": 162,
+            "string": "Marketplace"
+        },
+        {
+            "id": 163,
+            "string": "Meadow"
+        },
+        {
+            "id": 164,
+            "string": "Mountain Range"
+        },
+        {
+            "id": 165,
+            "string": "Northern Isles"
+        },
+        {
+            "id": 166,
+            "string": "Ring Fortress"
+        },
+        {
+            "id": 167,
+            "string": "Runestones"
+        },
+        {
+            "id": 168,
+            "string": "Aftermath"
+        },
+        {
+            "id": 169,
+            "string": "Enclosed"
+        },
+        {
+            "id": 170,
+            "string": "Haboob"
+        },
+        {
+            "id": 171,
+            "string": "Kawasan"
+        },
+        {
+            "id": 172,
+            "string": "Land Madness"
+        },
+        {
+            "id": 173,
+            "string": "Sacred Springs"
+        },
+        {
+            "id": 174,
+            "string": "Wade"
+        }
+    ],
+    "rating_type": [
+        {
+            "id": 0,
+            "string": "ノーレート"
+        },
+        {
+            "id": 1,
+            "string": "デス マッチ"
+        },
+        {
+            "id": 2,
+            "string": "ランダム マップ"
+        },
+        {
+            "id": 3,
+            "string": "チーム デス マッチ"
+        },
+        {
+            "id": 4,
+            "string": "チーム ランダム マップ"
+        },
+        {
+            "id": 5,
+            "string": "1v1 Random Map Quick Play"
+        },
+        {
+            "id": 6,
+            "string": "Team Random Map Quick Play"
+        },
+        {
+            "id": 7,
+            "string": "1v1 Empire Wars Quick Play"
+        },
+        {
+            "id": 8,
+            "string": "Team Empire Wars Quick Play"
+        },
+        {
+            "id": 9,
+            "string": "Battle Royale Quick Play"
+        },
+        {
+            "id": 13,
+            "string": "1v1 Empire Wars"
+        },
+        {
+            "id": 14,
+            "string": "Team Empire Wars"
+        }
+    ],
+    "resources": [
+        {
+            "id": 0,
+            "string": "標準"
+        },
+        {
+            "id": 1,
+            "string": "低"
+        },
+        {
+            "id": 2,
+            "string": "中"
+        },
+        {
+            "id": 3,
+            "string": "高"
+        },
+        {
+            "id": 4,
+            "string": "超高"
+        },
+        {
+            "id": 5,
+            "string": "無限"
+        },
+        {
+            "id": 6,
+            "string": "ランダム"
+        }
+    ],
+    "speed": [
+        {
+            "id": 0,
+            "string": "遅い"
+        },
+        {
+            "id": 1,
+            "string": "カジュアル"
+        },
+        {
+            "id": 2,
+            "string": "標準"
+        },
+        {
+            "id": 3,
+            "string": "速い"
+        }
+    ],
+    "victory": [
+        {
+            "id": 1,
+            "string": "征服"
+        },
+        {
+            "id": 7,
+            "string": "制限時間"
+        },
+        {
+            "id": 8,
+            "string": "得点"
+        },
+        {
+            "id": 9,
+            "string": "標準"
+        },
+        {
+            "id": 11,
+            "string": "サバイバル"
+        }
+    ],
+    "visibility": [
+        {
+            "id": 0,
+            "string": "標準"
+        },
+        {
+            "id": 1,
+            "string": "開拓済"
+        },
+        {
+            "id": 2,
+            "string": "すべて表示"
+        }
+    ]
+}

@@ -1,0 +1,622 @@
+{
+  "Arabia": {
+    "1": 9,
+    "2": 10875
+  },
+  "Archipelago": {
+    "1": 10,
+    "2": 10876
+  },
+  "Baltic": {
+    "1": 11,
+    "2": 10877
+  },
+  "BlackForest": {
+    "1": 12,
+    "2": 10878
+  },
+  "Coastal": {
+    "1": 13,
+    "2": 10879
+  },
+  "Continental": {
+    "1": 14,
+    "2": 10880
+  },
+  "CraterLake": {
+    "1": 15,
+    "2": 10881
+  },
+  "Fortress": {
+    "1": 16,
+    "2": 10882
+  },
+  "GoldRush": {
+    "1": 17,
+    "2": 10883
+  },
+  "Highland": {
+    "1": 18,
+    "2": 10884
+  },
+  "Islands": {
+    "1": 19,
+    "2": 10885
+  },
+  "Mediterranean": {
+    "1": 20,
+    "2": 10886
+  },
+  "Migration": {
+    "1": 21,
+    "2": 10887
+  },
+  "Rivers": {
+    "1": 22,
+    "2": 10888
+  },
+  "TeamIslands": {
+    "1": 23,
+    "2": 10889
+  },
+  "Scandanavia": {
+    "1": 25,
+    "2": 10891
+  },
+  "Mongolia": {
+    "1": 26,
+    "2": 10892
+  },
+  "Yucatan": {
+    "1": 27,
+    "2": 10894
+  },
+  "SaltMarsh": {
+    "1": 28,
+    "2": 10893
+  },
+  "Arena": {
+    "1": 29,
+    "2": 10895
+  },
+  "Oasis": {
+    "1": 31,
+    "2": 10897
+  },
+  "GhostLake": {
+    "1": 32,
+    "2": 10898
+  },
+  "Nomad": {
+    "1": 33,
+    "2": 10901
+  },
+  "Canals": {
+    "1": 34,
+    "2": 10985
+  },
+  "Capricious": {
+    "1": 35,
+    "2": 10986
+  },
+  "Dingos": {
+    "1": 36,
+    "2": 10987
+  },
+  "Graveyards": {
+    "1": 37,
+    "2": 10988
+  },
+  "Metropolis": {
+    "1": 38,
+    "2": 10989
+  },
+  "Moats": {
+    "1": 155,
+    "2": 10946
+  },
+  "ParadiseIsland": {
+    "1": 40,
+    "2": 10991
+  },
+  "Pilgrims": {
+    "1": 41,
+    "2": 10992
+  },
+  "Prairie": {
+    "1": 42,
+    "2": 10993
+  },
+  "Seasons": {
+    "1": 43,
+    "2": 10994
+  },
+  "SherwoodForest": {
+    "1": 44,
+    "2": 10995
+  },
+  "SherwoodHeroes": {
+    "1": 45,
+    "2": 10996
+  },
+  "Shipwreck": {
+    "1": 46,
+    "2": 10997
+  },
+  "TeamGlaciers": {
+    "1": 47,
+    "2": 10998
+  },
+  "TheUnknown": {
+    "1": 48,
+    "2": 10999
+  },
+  "RealWorldSpain": {
+    "1": 49,
+    "2": 13544
+  },
+  "RealWorldEngland": {
+    "1": 50,
+    "2": 13545
+  },
+  "RealWorldMideast": {
+    "1": 51,
+    "2": 13546
+  },
+  "RealWorldTexas": {
+    "1": 52,
+    "2": 13547
+  },
+  "RealWorldItaly": {
+    "1": 53,
+    "2": 13548
+  },
+  "RealWorldCaribbean": {
+    "1": 54,
+    "2": 13549
+  },
+  "RealWorldFrance": {
+    "1": 55,
+    "2": 13550
+  },
+  "RealWorldJutland": {
+    "1": 56,
+    "2": 13551
+  },
+  "RealWorldNippon": {
+    "1": 57,
+    "2": 13552
+  },
+  "RealWorldByzantium": {
+    "1": 58,
+    "2": 13553
+  },
+  "Acropolis": {
+    "1": 67,
+    "2": 10914
+  },
+  "Budapest": {
+    "1": 68,
+    "2": 10915
+  },
+  "Cenotes": {
+    "1": 69,
+    "2": 10916
+  },
+  "Cityoflakes": {
+    "1": 70,
+    "2": 10917
+  },
+  "Goldenpit": {
+    "1": 71,
+    "2": 10918
+  },
+  "Hideout": {
+    "1": 72,
+    "2": 10919
+  },
+  "Hillfort": {
+    "1": 73,
+    "2": 10920
+  },
+  "Lombardia": {
+    "1": 74,
+    "2": 10921
+  },
+  "Steppe": {
+    "1": 75,
+    "2": 10922
+  },
+  "Valley": {
+    "1": 76,
+    "2": 10923
+  },
+  "Megarandom": {
+    "1": 77,
+    "2": 10924
+  },
+  "Hamburger": {
+    "1": 78,
+    "2": 10925
+  },
+  "CtrRandom": {
+    "1": 79,
+    "2": 10926
+  },
+  "CtrMonsoon": {
+    "1": 80,
+    "2": 10927
+  },
+  "CtrPyramidDescent": {
+    "1": 81,
+    "2": 10928
+  },
+  "CtrSpiral": {
+    "1": 82,
+    "2": 10929
+  },
+  "Kilimanjaro": {
+    "1": 83,
+    "2": -2
+  },
+  "MountainPass": {
+    "1": 84,
+    "2": -2
+  },
+  "NileDelta": {
+    "1": 85,
+    "2": -2
+  },
+  "Serengeti": {
+    "1": 86,
+    "2": -2
+  },
+  "Socotra": {
+    "1": 87,
+    "2": -2
+  },
+  "RealWorldAmazon": {
+    "1": 88,
+    "2": -2
+  },
+  "RealWorldChina": {
+    "1": 89,
+    "2": -2
+  },
+  "RealWorldHornOfAfrica": {
+    "1": 90,
+    "2": -2
+  },
+  "RealWorldIndia": {
+    "1": 91,
+    "2": -2
+  },
+  "RealWorldMadagascar": {
+    "1": 92,
+    "2": -2
+  },
+  "RealWorldWestAfrica": {
+    "1": 93,
+    "2": -2
+  },
+  "RealWorldBohemia": {
+    "1": 94,
+    "2": -2
+  },
+  "RealWorldEarth": {
+    "1": 95,
+    "2": -2
+  },
+  "SpecialMapCanyons": {
+    "1": 96,
+    "2": -2
+  },
+  "SpecialMapArchipelago": {
+    "1": 97,
+    "2": -2
+  },
+  "SpecialMapEnemyIslands": {
+    "1": 98,
+    "2": -2
+  },
+  "SpecialMapFarOut": {
+    "1": 99,
+    "2": -2
+  },
+  "SpecialMapFrontLine": {
+    "1": 100,
+    "2": -2
+  },
+  "SpecialMapInnerCircle": {
+    "1": 101,
+    "2": -2
+  },
+  "SpecialMapMotherland": {
+    "1": 102,
+    "2": -2
+  },
+  "SpecialMapOpenPlains": {
+    "1": 103,
+    "2": -2
+  },
+  "SpecialMapRingOfWater": {
+    "1": 104,
+    "2": -2
+  },
+  "SpecialMapSnakePit": {
+    "1": 105,
+    "2": -2
+  },
+  "SpecialMapTheEye": {
+    "1": 106,
+    "2": -2
+  },
+  "RealWorldAustralia": {
+    "1": 107,
+    "2": -2
+  },
+  "RealWorldIndochina": {
+    "1": 108,
+    "2": -2
+  },
+  "RealWorldIndonesia": {
+    "1": 109,
+    "2": -2
+  },
+  "RealWorldMalacca": {
+    "1": 110,
+    "2": -2
+  },
+  "RealWorldPhilippines": {
+    "1": 111,
+    "2": -2
+  },
+  "BogIslands": {
+    "1": 112,
+    "2": -2
+  },
+  "MangroveJungle": {
+    "1": 113,
+    "2": -2
+  },
+  "PacificIslands": {
+    "1": 114,
+    "2": -2
+  },
+  "Sandbank": {
+    "1": 115,
+    "2": -2
+  },
+  "WaterNomad": {
+    "1": 116,
+    "2": -2
+  },
+  "SpecialMapJungleIslands": {
+    "1": 117,
+    "2": -2
+  },
+  "SpecialMapHolyLine": {
+    "1": 118,
+    "2": -2
+  },
+  "SpecialMapBorderStones": {
+    "1": 119,
+    "2": -2
+  },
+  "SpecialMapYinYang": {
+    "1": 120,
+    "2": -2
+  },
+  "SpecialMapJungleLanes": {
+    "1": 121,
+    "2": -2
+  },
+  "AlpineLakes": {
+    "1": 122,
+    "2": -2
+  },
+  "Bogland": {
+    "1": 123,
+    "2": -2
+  },
+  "MountainRidge": {
+    "1": 124,
+    "2": -2
+  },
+  "Ravines": {
+    "1": 125,
+    "2": -2
+  },
+  "WolfHill": {
+    "1": 126,
+    "2": -2
+  },
+  "SwirlingRiverSpecial": {
+    "1": 127,
+    "2": -2
+  },
+  "TwinForestsSpecial": {
+    "1": 128,
+    "2": -2
+  },
+  "JourneySouthSpecial": {
+    "1": 129,
+    "2": -2
+  },
+  "SnakeForestSpecial": {
+    "1": 130,
+    "2": -2
+  },
+  "SprawlingStreamsSpecial": {
+    "1": 131,
+    "2": -2
+  },
+  "RealWorldAntarctica": {
+    "1": 132,
+    "2": -2
+  },
+  "RealWorldAralSea": {
+    "1": 133,
+    "2": -2
+  },
+  "RealWorldBlackSea": {
+    "1": 134,
+    "2": -2
+  },
+  "RealWorldCaucasus": {
+    "1": 135,
+    "2": -2
+  },
+  "RealWorldSiberia": {
+    "1": 136,
+    "2": -2
+  },
+  "GoldenSwamp": {
+    "1": 139,
+    "2": 10930
+  },
+  "FourLakes": {
+    "1": 140,
+    "2": 10931
+  },
+  "LandNomad": {
+    "1": 141,
+    "2": 10932
+  },
+  "BattleOnTheIce": {
+    "1": 142,
+    "2": 10933
+  },
+  "ElDorado": {
+    "1": 143,
+    "2": 10934
+  },
+  "FallOfAxum": {
+    "1": 144,
+    "2": 10935
+  },
+  "FallOfRome": {
+    "1": 145,
+    "2": 10936
+  },
+  "TheMajapahitEmpire": {
+    "1": 146,
+    "2": 10937
+  },
+  "AmazonTunnel": {
+    "1": 147,
+    "2": 10938
+  },
+  "CoastalForest": {
+    "1": 148,
+    "2": 10939
+  },
+  "AfricanClearing": {
+    "1": 149,
+    "2": 10940
+  },
+  "Atacama": {
+    "1": 150,
+    "2": 10941
+  },
+  "SeizeTheMountain": {
+    "1": 151,
+    "2": 10942
+  },
+  "Crater": {
+    "1": 152,
+    "2": 10943
+  },
+  "Crossroads": {
+    "1": 153,
+    "2": 10944
+  },
+  "Michi": {
+    "1": 154,
+    "2": 10945
+  },
+  "VolcanicIsland": {
+    "1": 156,
+    "2": 10947
+  },
+  "Acclivity": {
+    "1": 157,
+    "2": 10948
+  },
+  "Eruption": {
+    "1": 158,
+    "2": 10949
+  },
+  "FrigidLake": {
+    "1": 159,
+    "2": 10950
+  },
+  "Greenland": {
+    "1": 160,
+    "2": 10951
+  },
+  "Lowland": {
+    "1": 161,
+    "2": 10952
+  },
+  "Marketplace": {
+    "1": 162,
+    "2": 10953
+  },
+  "Meadow": {
+    "1": 163,
+    "2": 10954
+  },
+  "MountainRange": {
+    "1": 164,
+    "2": 10955
+  },
+  "NorthernIsles": {
+    "1": 165,
+    "2": 10956
+  },
+  "RingFortress": {
+    "1": 166,
+    "2": 10957
+  },
+  "Runestones": {
+    "1": 167,
+    "2": 10958
+  },
+  "Aftermath": {
+    "1": 168,
+    "2": 10959
+  },
+  "Enclosed": {
+    "1": 169,
+    "2": 10960
+  },
+  "Haboob": {
+    "1": 170,
+    "2": 10961
+  },
+  "Kawasan": {
+    "1": 171,
+    "2": 10962
+  },
+  "LandMadness": {
+    "1": 172,
+    "2": 10963
+  },
+  "SacredSprings": {
+    "1": 173,
+    "2": 10964
+  },
+  "Wade": {
+    "1": 174,
+    "2": 10965
+  },
+  "Morass": {
+    "1": 175,
+    "2": 10966
+  },
+  "Shoals": {
+    "1": 176,
+    "2": 10967
+  }
+}
