@@ -6,8 +6,6 @@
 !.yarn/sdks
 !.yarn/versions
 
-proxy.controller.ts
-
 node_modules/**/*
 .expo/*
 npm-debug.*
