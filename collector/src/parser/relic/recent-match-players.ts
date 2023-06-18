@@ -1,4 +1,6 @@
-import {IParsedGenericPlayer} from "../match";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { IParsedGenericPlayer } from "../match";
 
 function alphabeticalToFixedCiv(alphabeticalCiv: number) {
     // return alphabeticalCiv;

@@ -1,10 +1,12 @@
-import {CACHE_MANAGER, Get, Inject, Injectable, Req, Response} from '@nestjs/common';
-import {sendResponse} from "../../helper/util";
-import {PrismaService} from "../../service/prisma.service";
-import {PUB_SUB} from "../../modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {Cache} from "cache-manager";
-import {CACHE_VERIFIED_PLAYERS} from "../../../../collector/src/task/verified.task";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Get, Inject, Injectable, Req, Response } from '@nestjs/common';
+import { sendResponse } from "../../helper/util";
+import { PrismaService } from "../../service/prisma.service";
+import { PUB_SUB } from "../../modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { Cache } from "cache-manager";
+import { CACHE_VERIFIED_PLAYERS } from "../../../../collector/src/task/verified.task";
 
 export interface IReferencePlayer {
     name: string;

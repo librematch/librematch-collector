@@ -1,9 +1,11 @@
-import {Controller, Get, Logger, OnApplicationBootstrap, Param, Req, Response} from '@nestjs/common';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Logger, OnApplicationBootstrap, Param, Req, Response } from '@nestjs/common';
 import fetch from "node-fetch";
-import {Request} from 'express';
-import {makeQueryString, sleep} from "../../../collector/src/helper/util";
+import { Request } from 'express';
+import { makeQueryString, sleep } from "../../../collector/src/helper/util";
 import { Response as Res } from 'express';
-import {sendMetric} from "../../../collector/src/helper/metric-api";
+import { sendMetric } from "../../../collector/src/helper/metric-api";
 
 @Controller()
 export class HttpProxyController implements OnApplicationBootstrap {
@@ -27,7 +29,7 @@ export class HttpProxyController implements OnApplicationBootstrap {
             const serviceName = process.env.SERVICE_NAME.replace(/-/g, '_');
             sendMetric(`${serviceName}_requests`, this.metricRequests);
             this.metricRequests = 0;
-        } catch (e) {}
+        } catch (e) { }
     }
 
     @Get('/ready')
@@ -54,7 +56,7 @@ export class HttpProxyController implements OnApplicationBootstrap {
         // const included_response_headers = ['content-type'];
 
         const headersRaw = Object.entries(request.headers).filter(([key, value]) => !excluded_headers.includes(key.toLowerCase()));
-        const headers = Object.assign({}, ...headersRaw.map(([key, value]) => ({[key]: value})));
+        const headers = Object.assign({}, ...headersRaw.map(([key, value]) => ({ [key]: value })));
 
         if (method === 'GET') {
             const data = {

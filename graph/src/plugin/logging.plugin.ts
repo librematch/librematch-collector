@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import { Plugin } from '@nestjs/apollo';
 import {
   ApolloServerPlugin,
@@ -22,20 +24,20 @@ import {
 
 @Plugin()
 export class LoggingPlugin implements ApolloServerPlugin {
-    async requestDidStart(requestContext: any): Promise<GraphQLRequestListener> {
-        console.log('Request started', requestContext.context?.req?.client?.remoteAddress, requestContext.context?.req?.headers['x-forwarded-for']);
+  async requestDidStart(requestContext: any): Promise<GraphQLRequestListener> {
+    console.log('Request started', requestContext.context?.req?.client?.remoteAddress, requestContext.context?.req?.headers['x-forwarded-for']);
 
-        const operationName = requestContext.request.operationName;
-        if (operationName === 'IntrospectionQuery') return;
-        return new BasicLoggingListener();
+    const operationName = requestContext.request.operationName;
+    if (operationName === 'IntrospectionQuery') return;
+    return new BasicLoggingListener();
 
-        // return {
-        //     async willSendResponse() {
-        //
-        //         console.log('Will send responseee');
-        //     },
-        // };
-    }
+    // return {
+    //     async willSendResponse() {
+    //
+    //         console.log('Will send responseee');
+    //     },
+    // };
+  }
 }
 
 
@@ -51,15 +53,15 @@ export class LoggingPlugin implements ApolloServerPlugin {
 
 class BasicLoggingListener implements GraphQLRequestListener {
 
-   async willSendResponse(requestContext: any) {
-     const tracing = requestContext.response.extensions?.['tracing'];
-     if (tracing == null) return;
-     const durationNs = tracing.duration;
-     const durationMs = durationNs / 1000 / 1000;
-     const operationName = requestContext.request.operationName;
-     console.log();
-     console.log(operationName);
-     console.log(durationMs + 'ms');
+  async willSendResponse(requestContext: any) {
+    const tracing = requestContext.response.extensions?.['tracing'];
+    if (tracing == null) return;
+    const durationNs = tracing.duration;
+    const durationMs = durationNs / 1000 / 1000;
+    const operationName = requestContext.request.operationName;
+    console.log();
+    console.log(operationName);
+    console.log(durationMs + 'ms');
   }
 
   [key: string]: import("apollo-server-types").AnyFunction

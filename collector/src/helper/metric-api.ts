@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import fetch from "node-fetch";
-import {fetchJsonWithRetry, makeQueryString} from "./util";
-import {IGetCommunityRecentMatchHistoryResult, IGetLeaderboard2Result} from "./community-api.types";
+import { fetchJsonWithRetry, makeQueryString } from "./util";
+import { IGetCommunityRecentMatchHistoryResult, IGetLeaderboard2Result } from "./community-api.types";
 
 const baseUrl = process.env.STATUS_URL;
 const apiKey = process.env.STATUS_API_KEY;

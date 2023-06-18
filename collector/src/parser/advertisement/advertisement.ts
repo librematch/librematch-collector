@@ -1,6 +1,7 @@
-import {IGenericMatch, IGenericMatchHistoryReportResult} from "../../helper/community-api.types";
-import {parseGenericMatch} from "../match";
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import { IGenericMatch, IGenericMatchHistoryReportResult } from "../../helper/community-api.types";
+import { parseGenericMatch } from "../match";
 
 const sampleLobby = [
     /* 00 */ 185011748,
@@ -17,7 +18,7 @@ const sampleLobby = [
     /* 11 */ 8,
     /* 12 */ "eNrV0t1PwjAQAHD/lj4Ps07QSOLLYMUR+Vih3cD4ULaSjX2wjKlD4/+uLQ4l4sM0UXi66665u/4yqCm3zyDNlvMg4mYyX54GHmhq6mVDayhglbM8WCZmGzShAnLOYpGqCpgztyy8nTLm8m2ahDf8gUfbU4/lrj9ep/JGTbQJYj7kGcpYzHsjeS9YYc68tZwiZt6v5OeY56zNcgaawAy7OiZItwiqW1RGY0S6IupjgpCIluMhTxW16YBFqdO3/cXMLjRKvDrrUIcm0Zg+0cyO/MQKZY/+e68WpamDE6wTOQN3hyPzCrwoX2lqcIel9skF7riISgmzyX8lo37IaN/L2J6UIU5avkQvX0pCuHkpCtc0oVPbSB8nC9RyYTSZdYoF0wpoh57dNxAWmtigG1U6vaaxHxBCpTb/gYx20DLcqCoD98u0qsucHbLMwKr6zyC0V6YXVJep/5EM3JGpumXjKLY8P4otL/5py7uTVw6VMxQ=",
     /* 13 */ 0,
-    /* 14 */ [
+    /* 14 */[
         [
             185011748,
             209525,
@@ -54,7 +55,7 @@ const sampleObservable = [
     /* 11 */ 8,
     /* 12 */ "eNrV0ltPgzAUAGB/S5+ZGWWoI/EFRxeI03Gr24wPBUpGuIxANZnG/66tLkocMcxlZk/ntOe0PflSGUr3L6CsVnGSUbOIV6dJBDTYH6pQlUDNCEtWhTkCmiwBRknO074EYhJuCu+rioRU9Ax4XqTX9Ilmn5UinRAWLr11KVp6/J4kp1NaoYrkdOKKvqR2KInW4hn+6GMttnPKyIgwAjRgpkhxfKTbPlJsLKJhY4dHHXvWbTC2mFNkS/ycOfM0Gt/gcu6mZRJgq174CPE+exZdiegv3ABls4lhifPeXTicuuYleJV+WvTkhkPvG4TcgOCVjQS8+LNE/0sC/irhdJZY7lUCtkoo8LASXmeJcrsENnaSUFolDvwl/K4Qnr4dYrbblxi0Qnzk+5KQGxJdp1SPYsqzo5jy/J+mfDh5A10hH0c=",
     /* 13 */ 0,
-    /* 14 */ [
+    /* 14 */[
         [
             /* 00 */ 185011748,
             /* 01 */ 209525,

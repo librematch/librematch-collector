@@ -1,15 +1,17 @@
-import {CACHE_MANAGER, Controller, Get, Inject, Param, Request, Response, UseGuards} from '@nestjs/common';
-import {createZodDto} from 'nestjs-zod'
-import {z} from 'nestjs-zod/z'
-import {sendResponse} from "../../helper/util";
-import {getLeaderboardEnumFromId, getLeaderboardIdFromEnum} from "../../helper/leaderboards";
-import {PrismaService} from "../../service/prisma.service";
-import {getParam} from "../legacy.controller";
-import {Cache} from "cache-manager";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Controller, Get, Inject, Param, Request, Response, UseGuards } from '@nestjs/common';
+import { createZodDto } from 'nestjs-zod'
+import { z } from 'nestjs-zod/z'
+import { sendResponse } from "../../helper/util";
+import { getLeaderboardEnumFromId, getLeaderboardIdFromEnum } from "../../helper/leaderboards";
+import { PrismaService } from "../../service/prisma.service";
+import { getParam } from "../legacy.controller";
+import { Cache } from "cache-manager";
 
 class ProfileSingleDto extends createZodDto(z.object({
     profile_id: z.string().regex(/^\d+$/).transform(Number),
-})) {}
+})) { }
 
 const PER_PAGE = 100;
 
@@ -95,8 +97,8 @@ export class LeaderboardSingleController {
             },
             where: {
                 leaderboard_id: getLeaderboardIdFromEnum(leaderboardId),
-                ...(country && {profile: {country}}),
-                ...(search && {name: {contains: search, mode: "insensitive"}}),
+                ...(country && { profile: { country } }),
+                ...(search && { name: { contains: search, mode: "insensitive" } }),
                 // ...(search && search.length <= 2 && {profile: {name: {equals: search, mode: "insensitive"}}}),
                 // ...(search && search.length >  2 && {profile: {name: {contains: search, mode: "insensitive"}}}),
             },

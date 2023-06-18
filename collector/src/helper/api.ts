@@ -1,5 +1,6 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {fetchJsonWithRetry, makeQueryString, sleep} from "./util";
+import { fetchJsonWithRetry, makeQueryString, sleep } from "./util";
 
 
 const baseUrl = process.env.PROXY_URL;

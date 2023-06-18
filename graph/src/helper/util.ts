@@ -1,5 +1,7 @@
-import {parseISO} from "date-fns";
-import {decamelizeKeys} from "humps";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { parseISO } from "date-fns";
+import { decamelizeKeys } from "humps";
 
 export function parseISONullable(value: string) {
     return value ? parseISO(value) : null;

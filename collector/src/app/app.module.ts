@@ -1,22 +1,24 @@
-import {CacheModule, DynamicModule, Injectable, Logger, Module, OnModuleInit} from '@nestjs/common';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {PrismaService} from "../service/prisma.service";
-import {ScheduleModule} from "@nestjs/schedule";
-import {PubSubModule} from "../../../graph/src/modules/redis.module";
-import {MatchTask} from "../task/match.task";
-import {LeaderboardTask} from "../task/leaderboard.task";
-import {StoreService} from "../service/store.service";
-import {DebugTask} from "../task/debug.task";
-import {ProfileTask} from "../task/profile.task";
-import {ReimportTask} from "../task/reimport.task";
-import {OngoingTask} from "../task/ongoing.task";
-import {LobbyTask} from "../task/lobby.task";
+import { CacheModule, DynamicModule, Injectable, Logger, Module, OnModuleInit } from '@nestjs/common';
+
+import { PrismaService } from "../service/prisma.service";
+import { ScheduleModule } from "@nestjs/schedule";
+import { PubSubModule } from "../../../graph/src/modules/redis.module";
+import { MatchTask } from "../task/match.task";
+import { LeaderboardTask } from "../task/leaderboard.task";
+import { StoreService } from "../service/store.service";
+import { DebugTask } from "../task/debug.task";
+import { ProfileTask } from "../task/profile.task";
+import { ReimportTask } from "../task/reimport.task";
+import { OngoingTask } from "../task/ongoing.task";
+import { LobbyTask } from "../task/lobby.task";
 import * as redisStore from 'cache-manager-redis-store';
-import {SentryModule} from "@ntegral/nestjs-sentry";
+import { SentryModule } from "@ntegral/nestjs-sentry";
 import { RewriteFrames } from "@sentry/integrations";
-import {ReplayTask} from "../task/replay.task";
-import {VerifiedTask} from "../task/verified.task";
-import {RedisService} from "../../../graph/src/service/redis.service";
+import { ReplayTask } from "../task/replay.task";
+import { VerifiedTask } from "../task/verified.task";
+import { RedisService } from "../../../graph/src/service/redis.service";
 
 @Module({
     providers: [

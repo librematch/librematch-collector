@@ -1,5 +1,7 @@
-import {Controller, Get, Logger, Req, Response} from '@nestjs/common';
-import {sendResponse} from "../helper/util";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Logger, Req, Response } from '@nestjs/common';
+import { sendResponse } from "../helper/util";
 
 @Controller()
 export class ReadyController {

@@ -1,12 +1,14 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import fetch from "node-fetch";
-import {makeQueryString} from "./util";
+import { makeQueryString } from "./util";
 import {
     findAdvertisements,
     findObservableAdvertisements, getLeaderBoard,
     IObservableAdvertisement,
     IObservableAdvertisements, IProfile
 } from "./api";
-import {uniqBy} from "lodash";
+import { uniqBy } from "lodash";
 
 
 export async function retrieveAllLeaderBoardBlocks(leaderboard_id: number): Promise<IObservableAdvertisement[]> {
@@ -14,7 +16,7 @@ export async function retrieveAllLeaderBoardBlocks(leaderboard_id: number): Prom
 
     let start = 1;
     while (true) {
-    // while (start < 200) {
+        // while (start < 200) {
         const leaderboardEntriesResponse = await getLeaderBoard(leaderboard_id, start);
         const [num, ...leaderboardBlock] = leaderboardEntriesResponse;
         // console.log(leaderboardBlock);

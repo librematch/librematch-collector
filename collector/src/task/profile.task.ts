@@ -1,14 +1,16 @@
-import {Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {Prisma} from '@prisma/client'
-import {chunk} from "lodash";
-import {upsertMany} from "../helper/db";
-import {getProfileName, proxySteamUserRequest} from "../helper/api";
-import {subDays} from "date-fns";
-import {sleep} from "../helper/util";
-import {parseProfile} from "../parser/profile";
-import {sendMetric} from "../helper/metric-api";
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { Prisma } from '@prisma/client'
+import { chunk } from "lodash";
+import { upsertMany } from "../helper/db";
+import { getProfileName, proxySteamUserRequest } from "../helper/api";
+import { subDays } from "date-fns";
+import { sleep } from "../helper/util";
+import { parseProfile } from "../parser/profile";
+import { sendMetric } from "../helper/metric-api";
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
 
 @Injectable()
 export class ProfileTask implements OnApplicationBootstrap {
@@ -19,7 +21,7 @@ export class ProfileTask implements OnApplicationBootstrap {
     constructor(
         private prisma: PrismaService,
         @InjectSentry() private readonly sentryService: SentryService,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         setTimeout(() => this.run(), 500);

@@ -1,9 +1,11 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import { inflate } from 'pako';
 
 // https://codebeautify.org/gzip-decompress-online
 export function decompressZlib(str: string) {
     let compressData: any = atob(str);
-    compressData = compressData.split('').map(function(e) {
+    compressData = compressData.split('').map(function (e) {
         return e.charCodeAt(0);
     });
     return inflate(compressData, { to: 'string' });
@@ -20,7 +22,7 @@ export function cleanStr(s: string) {
         .replace(/\\t/g, "\\t")
         .replace(/\\b/g, "\\b")
         .replace(/\\f/g, "\\f");
-// remove non-printable and other non-valid JSON chars
+    // remove non-printable and other non-valid JSON chars
     s = s.replace(/[\u0000-\u0019]+/g, "");
     return s;
 }

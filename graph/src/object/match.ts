@@ -1,5 +1,7 @@
-import {Field, Int, ObjectType, Parent, ResolveField} from '@nestjs/graphql';
-import {Player} from "./player";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Field, Int, ObjectType, Parent, ResolveField } from '@nestjs/graphql';
+import { Player } from "./player";
 
 
 @ObjectType()
@@ -16,25 +18,25 @@ export class Match {
     @Field()
     name: string;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     leaderboard_id?: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     location?: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     speed?: number;
 
     @Field(type => Int)
     num_players: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     replayed?: number;
 
     @Field(type => Date)
     started: Date;
 
-    @Field(type => Date, {nullable: true})
+    @Field(type => Date, { nullable: true })
     finished?: Date;
 
     @Field(type => [Player])

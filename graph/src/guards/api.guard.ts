@@ -1,6 +1,8 @@
-import {Injectable, CanActivate, ExecutionContext, OnModuleInit, HttpStatus, HttpException} from '@nestjs/common';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, CanActivate, ExecutionContext, OnModuleInit, HttpStatus, HttpException } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import {PrismaService} from "../service/prisma.service";
+import { PrismaService } from "../service/prisma.service";
 
 @Injectable()
 export class ApiGuard implements CanActivate, OnModuleInit {
@@ -9,7 +11,7 @@ export class ApiGuard implements CanActivate, OnModuleInit {
 
     constructor(
         private prisma: PrismaService
-    ) {}
+    ) { }
 
     async onModuleInit() {
         await this.updateApiKeys();

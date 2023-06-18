@@ -1,13 +1,15 @@
-import {CACHE_MANAGER, Controller, Get, Inject, OnModuleInit, Req, Request, Response, UseGuards} from '@nestjs/common';
-import {PrismaService} from "../service/prisma.service";
-import {fromUnixTime, getUnixTime} from "date-fns";
-import {getTranslation} from "../../../collector/src/helper/translation";
-import {getColor} from "../../../collector/src/helper/colors";
-import {getFlag} from "../../../collector/src/helper/flags";
-import {groupBy, sortBy} from "lodash";
-import {Prisma} from "@prisma/client";
-import {parseISONullable, sendResponse, sendResponseJsonRaw} from "../helper/util";
-import {Cache} from "cache-manager";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Controller, Get, Inject, OnModuleInit, Req, Request, Response, UseGuards } from '@nestjs/common';
+import { PrismaService } from "../service/prisma.service";
+import { fromUnixTime, getUnixTime } from "date-fns";
+import { getTranslation } from "../../../collector/src/helper/translation";
+import { getColor } from "../../../collector/src/helper/colors";
+import { getFlag } from "../../../collector/src/helper/flags";
+import { groupBy, sortBy } from "lodash";
+import { Prisma } from "@prisma/client";
+import { parseISONullable, sendResponse, sendResponseJsonRaw } from "../helper/util";
+import { Cache } from "cache-manager";
 import {
     fixCivMappingDawnOfTheDukes,
     fixCivMappingDynastiesOfIndia,
@@ -122,8 +124,8 @@ const CACHE_LEADERBOARD_COUNT = 'leaderboard-count-${leaderboardId}';
 
 const publicMatchCondition = {
     OR: [
-        {privacy: {equals: null}},
-        {privacy: {not: 0}},
+        { privacy: { equals: null } },
+        { privacy: { not: 0 } },
     ]
 };
 
@@ -239,7 +241,7 @@ export class LegacyController implements OnModuleInit {
                 },
             },
             where: {
-                ...(since && {started: {gte: fromUnixTime(since)}}),
+                ...(since && { started: { gte: fromUnixTime(since) } }),
             },
             take: count,
             orderBy: {
@@ -327,8 +329,8 @@ export class LegacyController implements OnModuleInit {
             },
             where: {
                 leaderboard_id: leaderboardId,
-                ...(country && {profile: {country}}),
-                ...(search && {name: {contains: search, mode: "insensitive"}}),
+                ...(country && { profile: { country } }),
+                ...(search && { name: { contains: search, mode: "insensitive" } }),
             },
             skip: start - 1,
             take: count,
@@ -415,7 +417,7 @@ export class LegacyController implements OnModuleInit {
                 WHERE p.name ILIKE ${search}
                 GROUP BY p.profile_id
                 ORDER BY SUM(wins+losses) desc NULLS LAST
-                OFFSET ${start-1}
+                OFFSET ${start - 1}
                 LIMIT ${count}
             `;
         } else if (profileId != null) {
@@ -426,7 +428,7 @@ export class LegacyController implements OnModuleInit {
                 WHERE p.profile_id = ${profileId}
                 GROUP BY p.profile_id
                 ORDER BY SUM(wins+losses) desc NULLS LAST
-                OFFSET ${start-1}
+                OFFSET ${start - 1}
                 LIMIT ${count}
             `;
         } else if (steamId != null) {
@@ -437,7 +439,7 @@ export class LegacyController implements OnModuleInit {
                 WHERE p.steam_id = ${steamId}
                 GROUP BY p.profile_id
                 ORDER BY SUM(wins+losses) desc NULLS LAST
-                OFFSET ${start-1}
+                OFFSET ${start - 1}
                 LIMIT ${count}
             `;
         }
@@ -479,7 +481,7 @@ export class LegacyController implements OnModuleInit {
             where: {
                 players: {
                     some: {
-                        profile_id: {in: profileIds.split(',').map(x => parseInt(x))},
+                        profile_id: { in: profileIds.split(',').map(x => parseInt(x)) },
                     },
                 },
                 ...publicMatchCondition,
@@ -544,12 +546,11 @@ export class LegacyController implements OnModuleInit {
                                         m.privacy != 0 AND
                                         EXISTS (SELECT * FROM player p2 WHERE p2.match_id=m.match_id AND p2.profile_id IN (${Prisma.join(profileIdList)}))
                                       
-                                        ${
-                                          search ? Prisma.sql`AND EXISTS (SELECT * FROM player p2 JOIN profile pr2 on pr2.profile_id = p2.profile_id WHERE p2.match_id=m.match_id AND pr2.name ILIKE ${search})` : Prisma.empty
-                                        }
+                                        ${search ? Prisma.sql`AND EXISTS (SELECT * FROM player p2 JOIN profile pr2 on pr2.profile_id = p2.profile_id WHERE p2.match_id=m.match_id AND pr2.name ILIKE ${search})` : Prisma.empty
+            }
                                       
                                       ORDER BY m.started desc
-                                      OFFSET ${start-1}
+                                      OFFSET ${start - 1}
                                       LIMIT ${count}
                     )
             ORDER BY m.started desc
@@ -765,7 +766,7 @@ export class LegacyController implements OnModuleInit {
                 },
                 where: {
                     leaderboard_id: leaderboardId,
-                    name: {contains: search, mode: "insensitive"}
+                    name: { contains: search, mode: "insensitive" }
                 },
                 orderBy: {
                     rating: 'desc',
@@ -802,7 +803,7 @@ export class LegacyController implements OnModuleInit {
         if (search != null) {
             return await this.prisma.profile.findFirst({
                 where: {
-                    name: {contains: search, mode: "insensitive"}
+                    name: { contains: search, mode: "insensitive" }
                 },
             });
         } else if (profileId != null) {
@@ -917,7 +918,7 @@ export class LegacyController implements OnModuleInit {
             where: {
                 leaderboard_id: match.leaderboard_id,
                 profile: {
-                    profile_id: {in: match.players.map(p => p.profile_id)},
+                    profile_id: { in: match.players.map(p => p.profile_id) },
                 },
             },
         });
@@ -929,7 +930,7 @@ export class LegacyController implements OnModuleInit {
             return Object.entries(groupBy(match.players, p => {
                 if (p.team != -1) return p.team;
                 return teamIndex++;
-            })).map(([team, players]) => ({team, players}));
+            })).map(([team, players]) => ({ team, players }));
         };
 
         const formatPlayer = (player: any) => {

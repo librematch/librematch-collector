@@ -1,11 +1,13 @@
-import {Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {chunk, sortBy} from "lodash";
-import {retrieveAllAdvertisements, retrieveAllObservableAdvertisements} from "../helper/api-paging";
-import {getRecentMatchHistory, IObservableAdvertisement} from "../helper/api";
-import {parseAdvertisement, parseObservableAdvertisement} from "../parser/advertisement/advertisement";
-import {getCommunityRecentMatchHistory} from "../helper/community-api";
-import {parseRecentMatch} from "../parser/relic/recent-match";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { chunk, sortBy } from "lodash";
+import { retrieveAllAdvertisements, retrieveAllObservableAdvertisements } from "../helper/api-paging";
+import { getRecentMatchHistory, IObservableAdvertisement } from "../helper/api";
+import { parseAdvertisement, parseObservableAdvertisement } from "../parser/advertisement/advertisement";
+import { getCommunityRecentMatchHistory } from "../helper/community-api";
+import { parseRecentMatch } from "../parser/relic/recent-match";
 
 @Injectable()
 export class DebugTask implements OnApplicationBootstrap {
@@ -13,7 +15,7 @@ export class DebugTask implements OnApplicationBootstrap {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         await this.run();

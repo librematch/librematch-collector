@@ -1,14 +1,16 @@
-import {Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
 import { Prisma } from '@prisma/client'
-import {uniq, chunk, uniqBy} from "lodash";
+import { uniq, chunk, uniqBy } from "lodash";
 import {
     retrieveAllAdvertisements,
     retrieveAllLeaderBoardBlocks,
     retrieveAllObservableAdvertisements
 } from "../helper/api-paging";
-import {upsertMany} from "../helper/db";
-import {getMatchesFromAoe2Companion, getProfileName, getRecentMatchHistory, proxySteamUserRequest} from "../helper/api";
+import { upsertMany } from "../helper/db";
+import { getMatchesFromAoe2Companion, getProfileName, getRecentMatchHistory, proxySteamUserRequest } from "../helper/api";
 
 @Injectable()
 export class ImportTask {
@@ -17,7 +19,7 @@ export class ImportTask {
     constructor(
         // private connection: Connection,
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     // async onApplicationBootstrap() {
     //     setTimeout(() => this.importMatches(), 500);

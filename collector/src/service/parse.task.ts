@@ -1,7 +1,9 @@
-import {Inject, Injectable, Logger} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {PUB_SUB} from "../../../graph/src/modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Inject, Injectable, Logger } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { PUB_SUB } from "../../../graph/src/modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
 
 @Injectable()
 export class ParseService {

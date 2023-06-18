@@ -1,12 +1,14 @@
-import {Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {Prisma} from '@prisma/client'
-import {chunk, sortBy, uniq} from "lodash";
-import {upsertMany} from "../helper/db";
-import {parseRecentMatch, recentMatchToGenericMatch} from "../parser/relic/recent-match";
-import {jsonDiff} from "@nrwl/workspace/src/utilities/json-diff";
-import {diffString} from "json-diff";
-import {MATCH_PARSER_VERSION} from "../parser/match";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { Prisma } from '@prisma/client'
+import { chunk, sortBy, uniq } from "lodash";
+import { upsertMany } from "../helper/db";
+import { parseRecentMatch, recentMatchToGenericMatch } from "../parser/relic/recent-match";
+import { jsonDiff } from "@nrwl/workspace/src/utilities/json-diff";
+import { diffString } from "json-diff";
+import { MATCH_PARSER_VERSION } from "../parser/match";
 
 @Injectable()
 export class ReimportTask implements OnApplicationBootstrap {
@@ -14,7 +16,7 @@ export class ReimportTask implements OnApplicationBootstrap {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         await this.run();
@@ -37,8 +39,8 @@ export class ReimportTask implements OnApplicationBootstrap {
             where: {
                 // match_id: { in: [ 183456158 ] },
                 OR: [
-                    {version: { equals: null }},
-                    {version: { lt: MATCH_PARSER_VERSION }},
+                    { version: { equals: null } },
+                    { version: { lt: MATCH_PARSER_VERSION } },
                 ],
                 // error: true,
             },
@@ -82,7 +84,7 @@ export class ReimportTask implements OnApplicationBootstrap {
 
                     parsed.push(parsedData);
 
-                    const {players, ...matchData} = parsedData;
+                    const { players, ...matchData } = parsedData;
 
                     matchItems.push({
                         ...matchData,
@@ -101,7 +103,7 @@ export class ReimportTask implements OnApplicationBootstrap {
             }
 
             const uniqueProfileIds = uniq(playerItems.map(player => player.profile_id));
-            const profileItems = uniqueProfileIds.map(profileId => ({profile_id: profileId}));
+            const profileItems = uniqueProfileIds.map(profileId => ({ profile_id: profileId }));
 
             await upsertMany(this.prisma, 'profile', ['profile_id'], profileItems);
             await upsertMany(this.prisma, 'match', ['match_id'], matchItems);

@@ -1,6 +1,8 @@
-import {Parent, ResolveField, Resolver} from "@nestjs/graphql";
-import {PrismaService} from "../service/prisma.service";
-import {Player} from "../object/player";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Parent, ResolveField, Resolver } from "@nestjs/graphql";
+import { PrismaService } from "../service/prisma.service";
+import { Player } from "../object/player";
 
 
 @Resolver(of => Player)
@@ -8,7 +10,7 @@ export class PlayerResolver {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     // async getLeaderboard(leaderboardId: number, profileId: number) {
     //     console.log('DB FETCH LEADERBOARD ROW', leaderboardId, profileId);

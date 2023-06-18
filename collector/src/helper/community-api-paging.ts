@@ -1,5 +1,7 @@
-import {ILeaderboardStat, IStatGroup} from "./community-api.types";
-import {getLeaderBoard2} from "./community-api";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { ILeaderboardStat, IStatGroup } from "./community-api.types";
+import { getLeaderBoard2 } from "./community-api";
 
 export async function retrieveAllLeaderBoard2Blocks(leaderboard_id: number) {
     const allLeaderboardBlocks = [];

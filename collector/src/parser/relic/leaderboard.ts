@@ -1,5 +1,7 @@
-import {fromUnixTime} from "date-fns";
-import {IGetLeaderboard2Result, ILeaderboardStat, IStatGroup} from "../../helper/community-api.types";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { fromUnixTime } from "date-fns";
+import { IGetLeaderboard2Result, ILeaderboardStat, IStatGroup } from "../../helper/community-api.types";
 
 const sample =
     [
@@ -31,7 +33,7 @@ const sample =
                 /* 10 */ null,
                 /* 11 */ "76561198240662592",
                 /* 12 */ 3,
-                /* 13 */ []
+                /* 13 */[]
             ],
             // ...
         ],
@@ -58,25 +60,25 @@ const sample =
 
 
 const sample2 = {
-  statGroups: [
-      {
-          "id": 1178783,
-          "name": "",
-          "type": 1,
-          "members": [
-              {
-                  "profile_id": 1389164,
-                  "name": "/steam/76561198240662592",
-                  "alias": "The Illusionist",
-                  "personal_statgroup_id": 1178783,
-                  "xp": 2381,
-                  "level": 2,
-                  "leaderboardregion_id": 0,
-                  "country": "sk"
-              }
-          ]
-      },
-      // ...
+    statGroups: [
+        {
+            "id": 1178783,
+            "name": "",
+            "type": 1,
+            "members": [
+                {
+                    "profile_id": 1389164,
+                    "name": "/steam/76561198240662592",
+                    "alias": "The Illusionist",
+                    "personal_statgroup_id": 1178783,
+                    "xp": 2381,
+                    "level": 2,
+                    "leaderboardregion_id": 0,
+                    "country": "sk"
+                }
+            ]
+        },
+        // ...
     ],
     leaderboardStats: [
         {

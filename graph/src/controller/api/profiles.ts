@@ -1,15 +1,17 @@
-import {Controller, Get, Request, Response, UseGuards} from '@nestjs/common';
-import {createZodDto} from 'nestjs-zod'
-import {z} from 'nestjs-zod/z'
-import {sendResponse} from "../../helper/util";
-import {PrismaService} from "../../service/prisma.service";
-import {getParam} from "../legacy.controller";
-import {ProfileService} from "../service/profile.service";
-import {ReferenceService} from "../service/reference.service";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Request, Response, UseGuards } from '@nestjs/common';
+import { createZodDto } from 'nestjs-zod'
+import { z } from 'nestjs-zod/z'
+import { sendResponse } from "../../helper/util";
+import { PrismaService } from "../../service/prisma.service";
+import { getParam } from "../legacy.controller";
+import { ProfileService } from "../service/profile.service";
+import { ReferenceService } from "../service/reference.service";
 
 class ProfileSingleDto extends createZodDto(z.object({
     profile_id: z.string().regex(/^\d+$/).transform(Number),
-})) {}
+})) { }
 
 const PER_PAGE = 20;
 
@@ -42,7 +44,7 @@ export class ProfileController {
             search = `%${search}%`;
         }
 
-        let profiles = await this.profileService.getProfiles({search, start, count, profileId, steamId});
+        let profiles = await this.profileService.getProfiles({ search, start, count, profileId, steamId });
 
         profiles = profiles.map(p => {
             return {

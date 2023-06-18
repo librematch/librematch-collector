@@ -1,6 +1,8 @@
-import {Args, Int, Query, Resolver} from "@nestjs/graphql";
-import {PrismaService} from "../service/prisma.service";
-import {LeaderboardRow, LeaderboardRowList} from "../object/leaderboard-row";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Args, Int, Query, Resolver } from "@nestjs/graphql";
+import { PrismaService } from "../service/prisma.service";
+import { LeaderboardRow, LeaderboardRowList } from "../object/leaderboard-row";
 
 
 @Resolver(of => LeaderboardRow)
@@ -8,14 +10,14 @@ export class LeaderboardRowResolver {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     @Query(returns => LeaderboardRowList)
     async leaderboard_rows(
-        @Args("leaderboard_id", {type: () => Int}) leaderboard_id: number,
-        @Args("start", {type: () => Int }) start: number,
-        @Args("count", {type: () => Int }) count: number,
-        @Args("search", {type: () => String, nullable: true }) search?: string,
+        @Args("leaderboard_id", { type: () => Int }) leaderboard_id: number,
+        @Args("start", { type: () => Int }) start: number,
+        @Args("count", { type: () => Int }) count: number,
+        @Args("search", { type: () => String, nullable: true }) search?: string,
     ): Promise<LeaderboardRowList> {
 
         console.log('leaderboard_rows', leaderboard_id, start, count);

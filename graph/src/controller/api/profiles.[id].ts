@@ -1,14 +1,16 @@
-import {Controller, Get, Param, Response, UseGuards} from '@nestjs/common';
-import {createZodDto} from 'nestjs-zod'
-import {z} from 'nestjs-zod/z'
-import {sendResponse} from "../../helper/util";
-import {getTranslation} from "../../../../collector/src/helper/translation";
-import {getLeaderboardEnumFromId, leaderboards} from "../../helper/leaderboards";
-import {PrismaService} from "../../service/prisma.service";
-import {ProfileService} from "../service/profile.service";
-import {maxBy} from "lodash";
-import {ReferenceService} from "../service/reference.service";
-import {flagEmojiDict} from "../../helper/flags";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Param, Response, UseGuards } from '@nestjs/common';
+import { createZodDto } from 'nestjs-zod'
+import { z } from 'nestjs-zod/z'
+import { sendResponse } from "../../helper/util";
+import { getTranslation } from "../../../../collector/src/helper/translation";
+import { getLeaderboardEnumFromId, leaderboards } from "../../helper/leaderboards";
+import { PrismaService } from "../../service/prisma.service";
+import { ProfileService } from "../service/profile.service";
+import { maxBy } from "lodash";
+import { ReferenceService } from "../service/reference.service";
+import { flagEmojiDict } from "../../helper/flags";
 
 class ProfileSingleDto extends createZodDto(z.object({
     profile_id: z.string().regex(/^\d+$/).transform(Number),
@@ -44,7 +46,7 @@ export class ProfileSingleController {
             ratings,
             stats,
         ] = await Promise.all([
-            (async () => (await this.profileService.getProfiles({profileId}))[0])(),
+            (async () => (await this.profileService.getProfiles({ profileId }))[0])(),
             this.getLeaderboards(profileId, language),
             this.getRatings(profileId, language),
             this.getStats(profileId, language),

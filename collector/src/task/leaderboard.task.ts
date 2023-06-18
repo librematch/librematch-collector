@@ -1,16 +1,18 @@
-import {CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {Prisma} from '@prisma/client'
-import {chunk, flatten, groupBy} from "lodash";
-import {upsertMany} from "../helper/db";
-import {differenceInMinutes, fromUnixTime} from "date-fns";
-import {retrieveAllLeaderBoard2Blocks} from "../helper/community-api-paging";
-import {ILeaderboardStat, IStatGroup} from "../helper/community-api.types";
-import {retrieveAllLeaderBoardBlocks} from "../helper/api-paging";
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
-import {leaderboardToCommunityLeaderboard} from "../parser/relic/leaderboard";
-import {Cache} from "cache-manager";
-import {putKv} from "../helper/kv-api";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { Prisma } from '@prisma/client'
+import { chunk, flatten, groupBy } from "lodash";
+import { upsertMany } from "../helper/db";
+import { differenceInMinutes, fromUnixTime } from "date-fns";
+import { retrieveAllLeaderBoard2Blocks } from "../helper/community-api-paging";
+import { ILeaderboardStat, IStatGroup } from "../helper/community-api.types";
+import { retrieveAllLeaderBoardBlocks } from "../helper/api-paging";
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
+import { leaderboardToCommunityLeaderboard } from "../parser/relic/leaderboard";
+import { Cache } from "cache-manager";
+import { putKv } from "../helper/kv-api";
 
 
 interface IParsedLeaderboardRow {
@@ -37,7 +39,7 @@ export class LeaderboardTask implements OnApplicationBootstrap {
         private prisma: PrismaService,
         @InjectSentry() private readonly sentryService: SentryService,
         @Inject(CACHE_MANAGER) private cache: Cache,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         setTimeout(() => this.importData(), 500);
@@ -85,7 +87,7 @@ export class LeaderboardTask implements OnApplicationBootstrap {
                 parsed.forEach(x => leaderboardEntries.push(x));
             }
             console.log(new Date(), 'DELETE lt updatedAt');
-            await this.prisma.leaderboard_row.deleteMany({where: { leaderboard_id: leaderboardId, updated_at: { lt: updatedAt } }});
+            await this.prisma.leaderboard_row.deleteMany({ where: { leaderboard_id: leaderboardId, updated_at: { lt: updatedAt } } });
             await this.runSetRanks(leaderboardId);
             await this.runUpdateCountCache(leaderboardId);
         }
@@ -170,7 +172,7 @@ export class LeaderboardTask implements OnApplicationBootstrap {
                 profileItems.push({
                     profile_id: leaderboardStat.profile_id,
                     name: leaderboardStat.name,
-                    ...(leaderboardStat.country ? {country: leaderboardStat.country } : {}),
+                    ...(leaderboardStat.country ? { country: leaderboardStat.country } : {}),
                 });
 
                 profileItems2.push({

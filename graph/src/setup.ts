@@ -1,11 +1,13 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 // Imports
-import {SemanticResourceAttributes} from '@opentelemetry/semantic-conventions'
-import {OTLPTraceExporter} from '@opentelemetry/exporter-trace-otlp-http'
-import {registerInstrumentations} from '@opentelemetry/instrumentation'
-import {BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor} from '@opentelemetry/sdk-trace-base'
-import {NodeTracerProvider} from '@opentelemetry/sdk-trace-node'
-import {PrismaInstrumentation} from '@prisma/instrumentation'
-import {Resource} from '@opentelemetry/resources'
+import { SemanticResourceAttributes } from '@opentelemetry/semantic-conventions'
+import { OTLPTraceExporter } from '@opentelemetry/exporter-trace-otlp-http'
+import { registerInstrumentations } from '@opentelemetry/instrumentation'
+import { BasicTracerProvider, ConsoleSpanExporter, SimpleSpanProcessor } from '@opentelemetry/sdk-trace-base'
+import { NodeTracerProvider } from '@opentelemetry/sdk-trace-node'
+import { PrismaInstrumentation } from '@prisma/instrumentation'
+import { Resource } from '@opentelemetry/resources'
 import { AsyncHooksContextManager } from '@opentelemetry/context-async-hooks'
 import * as api from '@opentelemetry/api'
 

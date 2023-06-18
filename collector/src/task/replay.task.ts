@@ -1,7 +1,9 @@
-import {Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
 import fetch from "node-fetch";
-import {sleep} from "../helper/util";
+import { sleep } from "../helper/util";
 
 @Injectable()
 export class ReplayTask implements OnApplicationBootstrap {
@@ -9,7 +11,7 @@ export class ReplayTask implements OnApplicationBootstrap {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         await this.run();

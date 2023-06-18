@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import {
     ExceptionFilter,
     Catch,
@@ -5,8 +7,8 @@ import {
     HttpException,
     HttpStatus, HttpServer,
 } from '@nestjs/common';
-import {BaseExceptionFilter, HttpAdapterHost} from '@nestjs/core';
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
+import { BaseExceptionFilter, HttpAdapterHost } from '@nestjs/core';
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
 
 @Catch()
 export class AllExceptionsFilter implements ExceptionFilter {
@@ -16,7 +18,7 @@ export class AllExceptionsFilter implements ExceptionFilter {
     catch(exception: unknown, host: ArgumentsHost): void {
         // In certain situations `httpAdapter` might not be available in the
         // constructor method, thus we should resolve it here.
-        const {httpAdapter} = this.httpAdapterHost;
+        const { httpAdapter } = this.httpAdapterHost;
 
         const ctx = host.switchToHttp();
 

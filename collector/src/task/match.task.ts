@@ -1,19 +1,21 @@
-import {Inject, Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {Prisma} from '@prisma/client'
-import {chunk, maxBy, uniq, uniqBy} from "lodash";
-import {upsertMany} from "../helper/db";
-import {getRecentMatchHistory} from "../helper/api";
-import {parseRecentMatch, recentMatchToGenericMatch} from "../parser/relic/recent-match";
-import {isEqual} from "date-fns";
-import {PUB_SUB} from "../../../graph/src/modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {time} from "../parser/util";
-import {sleep} from "../helper/util";
-import {sendMetric} from "../helper/metric-api";
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
-import {MATCH_PARSER_VERSION} from "../parser/match";
-import {PUBSUB_MATCH_STARTED} from "./ongoing.task";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Inject, Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { Prisma } from '@prisma/client'
+import { chunk, maxBy, uniq, uniqBy } from "lodash";
+import { upsertMany } from "../helper/db";
+import { getRecentMatchHistory } from "../helper/api";
+import { parseRecentMatch, recentMatchToGenericMatch } from "../parser/relic/recent-match";
+import { isEqual } from "date-fns";
+import { PUB_SUB } from "../../../graph/src/modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { time } from "../parser/util";
+import { sleep } from "../helper/util";
+import { sendMetric } from "../helper/metric-api";
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
+import { MATCH_PARSER_VERSION } from "../parser/match";
+import { PUBSUB_MATCH_STARTED } from "./ongoing.task";
 
 export const PUBSUB_MATCH_FINISHED = 'pubsub-match-finished';
 
@@ -27,7 +29,7 @@ export class MatchTask implements OnApplicationBootstrap {
         private prisma: PrismaService,
         @Inject(PUB_SUB) private pubSub: RedisPubSub,
         @InjectSentry() private readonly sentryService: SentryService,
-    ) {}
+    ) { }
 
     async onApplicationBootstrap() {
         setTimeout(() => this.importMatches(), 500);
@@ -57,10 +59,10 @@ export class MatchTask implements OnApplicationBootstrap {
         console.log('FetchPendingMatches');
 
         const pendingMatches = await this.prisma.match_pending.findMany({
-           take: 100,
-           orderBy: {
-               priority: 'desc',
-           },
+            take: 100,
+            orderBy: {
+                priority: 'desc',
+            },
         });
 
 
@@ -90,7 +92,7 @@ export class MatchTask implements OnApplicationBootstrap {
                         console.log(`pending match not FINISHED match id ${parsedData.match_id}`);
                     }
 
-                    const {players, ...matchData} = parsedData;
+                    const { players, ...matchData } = parsedData;
 
                     matchItems.push({
                         ...matchData,
@@ -132,7 +134,7 @@ export class MatchTask implements OnApplicationBootstrap {
                     location: true,
                 },
                 where: {
-                   match_id: { in: matchItems.map(m => m.match_id) },
+                    match_id: { in: matchItems.map(m => m.match_id) },
                 },
             });
 
@@ -141,7 +143,7 @@ export class MatchTask implements OnApplicationBootstrap {
                     match_id: true,
                 },
                 where: {
-                   match_id: { in: matchItems.map(m => m.match_id) },
+                    match_id: { in: matchItems.map(m => m.match_id) },
                 },
             });
 
@@ -166,7 +168,7 @@ export class MatchTask implements OnApplicationBootstrap {
             console.log('matchItems.length', matchItems.length);
 
             const uniqueProfileIds = uniq(playerItems.map(player => player.profile_id));
-            const profileItems = uniqueProfileIds.map(profileId => ({profile_id: profileId}));
+            const profileItems = uniqueProfileIds.map(profileId => ({ profile_id: profileId }));
 
             time();
 
@@ -211,8 +213,8 @@ export class MatchTask implements OnApplicationBootstrap {
                     },
                 },
                 where: {
-                    match_id: {in: matchItems.map(m => m.match_id)},
-                    finished: {gt: new Date(Date.now() - 1000 * 60 * 5)},
+                    match_id: { in: matchItems.map(m => m.match_id) },
+                    finished: { gt: new Date(Date.now() - 1000 * 60 * 5) },
                 },
                 orderBy: {
                     finished: 'asc',

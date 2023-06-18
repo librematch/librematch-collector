@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 /**
  * This is not a production server yet!
  * This is only a minimal backend to get started.
@@ -7,14 +9,14 @@
 // const g: LeaderboardRow = null;
 
 import { Logger } from '@nestjs/common';
-import {HttpAdapterHost, NestFactory} from '@nestjs/core';
+import { HttpAdapterHost, NestFactory } from '@nestjs/core';
 
 import { AppModule } from './app/app.module';
 import compression from "compression";
-import {setupTracing} from "./setup";
+import { setupTracing } from "./setup";
 import { WsAdapter } from '@nestjs/platform-ws';
-import {AllExceptionsFilter, AllExceptionsFilter2} from "./plugin/exceptions-filter";
-import {SentryService} from "@ntegral/nestjs-sentry";
+import { AllExceptionsFilter, AllExceptionsFilter2 } from "./plugin/exceptions-filter";
+import { SentryService } from "@ntegral/nestjs-sentry";
 
 
 async function bootstrap() {

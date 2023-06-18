@@ -1,14 +1,16 @@
-import {Controller, Get, Request, Response, UseGuards} from '@nestjs/common';
-import {createZodDto} from 'nestjs-zod'
-import {z} from 'nestjs-zod/z'
-import {sendResponse} from "../../helper/util";
-import {getTranslation} from "../../../../collector/src/helper/translation";
-import {getLeaderboardEnumFromId, leaderboards} from "../../helper/leaderboards";
-import {PrismaService} from "../../service/prisma.service";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Request, Response, UseGuards } from '@nestjs/common';
+import { createZodDto } from 'nestjs-zod'
+import { z } from 'nestjs-zod/z'
+import { sendResponse } from "../../helper/util";
+import { getTranslation } from "../../../../collector/src/helper/translation";
+import { getLeaderboardEnumFromId, leaderboards } from "../../helper/leaderboards";
+import { PrismaService } from "../../service/prisma.service";
 
 class ProfileSingleDto extends createZodDto(z.object({
     profile_id: z.string().regex(/^\d+$/).transform(Number),
-})) {}
+})) { }
 
 
 @Controller()

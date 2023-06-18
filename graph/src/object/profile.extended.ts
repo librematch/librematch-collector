@@ -1,7 +1,9 @@
-import {Field, Int, ObjectType, Parent, ResolveField} from '@nestjs/graphql';
-import {Leaderboard} from "./leaderboard";
-import {RatingHistory} from "./rating_history";
-import {Stats} from "./stats";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Field, Int, ObjectType, Parent, ResolveField } from '@nestjs/graphql';
+import { Leaderboard } from "./leaderboard";
+import { RatingHistory } from "./rating_history";
+import { Stats } from "./stats";
 
 @ObjectType()
 export class ProfileExtended {
@@ -11,16 +13,16 @@ export class ProfileExtended {
     @Field()
     name: string;
 
-    @Field({nullable: true})
+    @Field({ nullable: true })
     country?: string;
 
     @Field()
     last_match_time: Date;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     games?: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     drops?: number;
 
     @Field(type => [Leaderboard])

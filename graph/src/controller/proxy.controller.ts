@@ -1,11 +1,13 @@
-import {Controller, Get, Logger, OnApplicationBootstrap, Param, Req, Response} from '@nestjs/common';
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Logger, OnApplicationBootstrap, Param, Req, Response } from '@nestjs/common';
 import SteamUser from "steam-user";
-import {generateAuthCode} from "steam-totp";
+import { generateAuthCode } from "steam-totp";
 import fetch from "node-fetch";
-import {Request} from 'express';
-import {makeQueryString} from "../../../collector/src/helper/util";
+import { Request } from 'express';
+import { makeQueryString } from "../../../collector/src/helper/util";
 import { Response as Res } from 'express';
-import {sendMetric} from "../../../collector/src/helper/metric-api";
+import { sendMetric } from "../../../collector/src/helper/metric-api";
 
 export interface ISteamSecrets {
     shared_secret: string
@@ -90,7 +92,7 @@ export class ProxyController implements OnApplicationBootstrap {
             const serviceName = process.env.SERVICE_NAME.replace(/-/g, '_');
             sendMetric(`${serviceName}_requests`, this.metricRequests);
             this.metricRequests = 0;
-        } catch (e) {}
+        } catch (e) { }
     }
 
     @Get('/ready')
@@ -124,7 +126,7 @@ export class ProxyController implements OnApplicationBootstrap {
 
     async getEncodedTicket() {
         // if we don't have a ticket or if it's older than 45 minutes, renew it:
-        if (this.appTicket == null || new Date().getTime() > this.appTicket.lastUpdate.getTime() + 2700*1000) {
+        if (this.appTicket == null || new Date().getTime() > this.appTicket.lastUpdate.getTime() + 2700 * 1000) {
             try {
                 console.log("[App Ticket] Refreshing app ticket");
 
@@ -152,7 +154,7 @@ export class ProxyController implements OnApplicationBootstrap {
 
     async relicLogin() {
         // if we don't have a session or if it's older than 3 minutes renew it:
-        if (this.relicSession == null || new Date().getTime() > this.relicSession.lastUpdate.getTime() + 200*1000) {
+        if (this.relicSession == null || new Date().getTime() > this.relicSession.lastUpdate.getTime() + 200 * 1000) {
             try {
                 console.log('[Relic Login] Refreshing app session');
 
@@ -241,7 +243,7 @@ export class ProxyController implements OnApplicationBootstrap {
         const excluded_headers = ['content-encoding', 'content-length', 'transfer-encoding', 'connection', 'api_key', 'host', 'user-agent'];
 
         const headersRaw = Object.entries(request.headers).filter(([key, value]) => !excluded_headers.includes(key.toLowerCase()));
-        const headers = Object.assign({}, ...headersRaw.map(([key, value]) => ({[key]: value})));
+        const headers = Object.assign({}, ...headersRaw.map(([key, value]) => ({ [key]: value })));
 
         if (method === 'GET') {
             const data = {

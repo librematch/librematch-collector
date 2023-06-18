@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import { RedisPubSub } from 'graphql-redis-subscriptions';
 import { Global, Module } from '@nestjs/common';
 
@@ -25,4 +27,4 @@ console.log('----------------------');
     ],
     exports: [PUB_SUB],
 })
-export class PubSubModule {}
+export class PubSubModule { }

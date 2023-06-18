@@ -1,16 +1,18 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import {
     Args, ArgsType, createUnionType, Field, Int, Mutation, Parent, Query, ResolveField, Resolver, Root, Subscription
 } from "@nestjs/graphql";
-import {Match, MatchList} from "../object/match";
-import {PrismaService} from "../service/prisma.service";
-import {join} from '@prisma/client/runtime';
-import {Inject} from "@nestjs/common";
-import {PUB_SUB} from "../modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {parseISONullable} from "../helper/util";
-import {mapIterator} from "../plugin/map.iterator";
-import {filterIterator} from "../plugin/filter.iterator";
-import {prefillIterator} from "../plugin/prefill.iterator";
+import { Match, MatchList } from "../object/match";
+import { PrismaService } from "../service/prisma.service";
+import { join } from '@prisma/client/runtime';
+import { Inject } from "@nestjs/common";
+import { PUB_SUB } from "../modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { parseISONullable } from "../helper/util";
+import { mapIterator } from "../plugin/map.iterator";
+import { filterIterator } from "../plugin/filter.iterator";
+import { prefillIterator } from "../plugin/prefill.iterator";
 
 // import {PubSub, withFilter} from "apollo-server-express";
 // const pubSub = new PubSub();
@@ -57,12 +59,12 @@ export class MatchResolver {
     constructor(
         private prisma: PrismaService,
         @Inject(PUB_SUB) private pubSub: RedisPubSub,
-    ) {}
+    ) { }
 
     @Query(returns => Match)
     async match(
-        @Args("match_id", {nullable: true}) match_id?: number,
-        @Args("match_uuid", {nullable: true}) match_uuid?: string
+        @Args("match_id", { nullable: true }) match_id?: number,
+        @Args("match_uuid", { nullable: true }) match_uuid?: string
     ) {
         const match = await this.prisma.match.findUnique({
             include: {
@@ -78,10 +80,10 @@ export class MatchResolver {
 
     @Query(returns => MatchList)
     async matches(
-        @Args("start", {type: () => Int }) start: number,
-        @Args("count", {type: () => Int }) count: number,
-        @Args("profile_ids", {type: () => [Int]}) profile_ids: number[],
-        @Args("leaderboard_id", {type: () => Int, nullable: true}) leaderboard_id?: number,
+        @Args("start", { type: () => Int }) start: number,
+        @Args("count", { type: () => Int }) count: number,
+        @Args("profile_ids", { type: () => [Int] }) profile_ids: number[],
+        @Args("leaderboard_id", { type: () => Int, nullable: true }) leaderboard_id?: number,
     ) {
         if (count > 1000) throw Error('count must be <= 1000');
 
@@ -113,10 +115,10 @@ export class MatchResolver {
 
         const matches = await this.prisma.match.findMany({
             include: {
-                players: { include: { profile: true }},
+                players: { include: { profile: true } },
             },
             where: {
-                match_id: {in: matchIds.map(x => x.match_id)}
+                match_id: { in: matchIds.map(x => x.match_id) }
             },
             orderBy: {
                 started: 'desc',
@@ -142,10 +144,10 @@ export class MatchResolver {
 
         const matches = await this.prisma.match.findMany({
             include: {
-                players: { include: { profile: true }},
+                players: { include: { profile: true } },
             },
             where: {
-                match_id: {in: matchIds.map(x => x.match_id)}
+                match_id: { in: matchIds.map(x => x.match_id) }
             },
             orderBy: {
                 started: 'desc',
@@ -173,10 +175,10 @@ export class MatchResolver {
 
         const matches = await this.prisma.match.findMany({
             include: {
-                players: { include: { profile: true }},
+                players: { include: { profile: true } },
             },
             where: {
-                match_id: {in: matchIds.map(x => x.match_id)}
+                match_id: { in: matchIds.map(x => x.match_id) }
             },
             orderBy: {
                 started: 'desc',
@@ -186,22 +188,22 @@ export class MatchResolver {
         console.log('ongoingMatchesSub');
 
 
-            // setTimeout(() => {
-            //     this.pubSub.publish('match',
-            //         matches[0],
-            //     );
-            // });
-            // return filterIterator(
-            //     mapIterator(this.pubSub.asyncIterator('match'), reviveMatch),
-            //     match => {
-            //         return true;
-            //         // return match.players.some(p => p.profile_id == profile_id);
-            //     }
-            // );
+        // setTimeout(() => {
+        //     this.pubSub.publish('match',
+        //         matches[0],
+        //     );
+        // });
+        // return filterIterator(
+        //     mapIterator(this.pubSub.asyncIterator('match'), reviveMatch),
+        //     match => {
+        //         return true;
+        //         // return match.players.some(p => p.profile_id == profile_id);
+        //     }
+        // );
 
         // return prefillIterator(mapIterator(this.pubSub.asyncIterator('ongoingMatches'), reviveMatch), matches);
         // return prefillIterator(mapIterator(this.pubSub.asyncIterator('ongoingMatches'), reviveMatch), [matches[0], matches[1], matches[2]]);
-        return prefillIterator(mapIterator(this.pubSub.asyncIterator('ongoingMatches'), reviveMatch), [{matches}]);
+        return prefillIterator(mapIterator(this.pubSub.asyncIterator('ongoingMatches'), reviveMatch), [{ matches }]);
 
         // return mapIterator(prefillIterator(this.pubSub.asyncIterator('ongoingMatches'), [matches[0]]), reviveMatch);
 
@@ -249,7 +251,7 @@ export class MatchResolver {
 
     @Subscription(returns => Match, { resolve: x => x })
     async matchSub(
-        @Args("profile_id", {type: () => Int, nullable: true}) profile_id?: number,
+        @Args("profile_id", { type: () => Int, nullable: true }) profile_id?: number,
     ) {
         let matchIds: any;
         matchIds = await this.prisma.$queryRaw`
@@ -266,7 +268,7 @@ export class MatchResolver {
                 players: true,
             },
             where: {
-                match_id: {in: matchIds.map(x => x.match_id)}
+                match_id: { in: matchIds.map(x => x.match_id) }
             },
             orderBy: {
                 started: 'desc',

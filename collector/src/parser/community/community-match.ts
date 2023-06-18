@@ -1,4 +1,6 @@
-import {IGenericMatch, MatchHistoryStat} from "../../helper/community-api.types";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { IGenericMatch, MatchHistoryStat } from "../../helper/community-api.types";
 
 const sample = {
     "id": 180272347,

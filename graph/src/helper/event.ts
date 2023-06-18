@@ -1,6 +1,8 @@
-import {uniq} from "lodash";
-import {getStatusEnumFromId} from "./enums";
-import {getTranslation} from "../../../collector/src/helper/translation";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { uniq } from "lodash";
+import { getStatusEnumFromId } from "./enums";
+import { getTranslation } from "../../../collector/src/helper/translation";
 
 
 export function getTotalSlotCount(match: any) {
@@ -40,7 +42,7 @@ export function getDiffEvents<T>(old: Record<string, T>, current: Record<string,
             if (current[key] == null) {
                 diff.push({
                     type: mapping['removed'],
-                    data: {...idGetter(key)},
+                    data: { ...idGetter(key) },
                 })
             } else if (old[key] == null) {
                 diff.push({
@@ -75,7 +77,7 @@ export function getDiffEventsAddRemove<T>(old: Record<string, T>, current: Recor
             if (current[key] == null) {
                 diff.push({
                     type: mapping['removed'],
-                    data: {...idGetter(key)},
+                    data: { ...idGetter(key) },
                 })
             } else if (old[key] == null) {
                 diff.push({

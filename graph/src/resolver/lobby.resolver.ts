@@ -1,22 +1,24 @@
-import {Resolver, Subscription} from "@nestjs/graphql";
-import {Dummy} from "../object/match";
-import {PrismaService} from "../service/prisma.service";
-import {CACHE_MANAGER, Inject} from "@nestjs/common";
-import {PUB_SUB} from "../modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {mapIterator} from "../plugin/map.iterator";
-import {prefillIterator} from "../plugin/prefill.iterator";
-import {Cache} from 'cache-manager';
-import {generate, observe} from "fast-json-patch";
-import {getLeaderboardEnumFromId} from "../helper/leaderboards";
-import {getTranslation} from "../../../collector/src/helper/translation";
-import {getMapEnumFromId, getMapImage} from "../helper/maps";
-import {getCivImage} from "../helper/civs";
-import {getStatusEnumFromId} from "../helper/enums";
-import {flatten, meanBy, sumBy} from "lodash";
-import {CACHE_LOBBIES, PUBSUB_LOBBIES} from "../../../collector/src/task/lobby.task";
-import {IParsedGenericMatch} from "../../../collector/src/parser/match";
-import {getPlayerBackgroundColor} from "../helper/util";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Resolver, Subscription } from "@nestjs/graphql";
+import { Dummy } from "../object/match";
+import { PrismaService } from "../service/prisma.service";
+import { CACHE_MANAGER, Inject } from "@nestjs/common";
+import { PUB_SUB } from "../modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { mapIterator } from "../plugin/map.iterator";
+import { prefillIterator } from "../plugin/prefill.iterator";
+import { Cache } from 'cache-manager';
+import { generate, observe } from "fast-json-patch";
+import { getLeaderboardEnumFromId } from "../helper/leaderboards";
+import { getTranslation } from "../../../collector/src/helper/translation";
+import { getMapEnumFromId, getMapImage } from "../helper/maps";
+import { getCivImage } from "../helper/civs";
+import { getStatusEnumFromId } from "../helper/enums";
+import { flatten, meanBy, sumBy } from "lodash";
+import { CACHE_LOBBIES, PUBSUB_LOBBIES } from "../../../collector/src/task/lobby.task";
+import { IParsedGenericMatch } from "../../../collector/src/parser/match";
+import { getPlayerBackgroundColor } from "../helper/util";
 
 
 function getTotalSlotCount(match: any) {
@@ -45,7 +47,7 @@ export class LobbyResolver {
         private prisma: PrismaService,
         @Inject(PUB_SUB) private pubSub: RedisPubSub,
         @Inject(CACHE_MANAGER) private cache: Cache,
-    ) {}
+    ) { }
 
     async reviveLobbies(matches: any) {
         // console.log('reviveLobby', match);

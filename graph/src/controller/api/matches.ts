@@ -1,17 +1,19 @@
-import {Controller, Get, Request, Response, UseGuards} from '@nestjs/common';
-import {createZodDto} from 'nestjs-zod'
-import {z} from 'nestjs-zod/z'
-import {getPlayerBackgroundColor, parseISONullable, sendResponse} from "../../helper/util";
-import {getTranslation} from "../../../../collector/src/helper/translation";
-import {getLeaderboardEnumFromId, getLeaderboardIdFromEnum, leaderboards} from "../../helper/leaderboards";
-import {PrismaService} from "../../service/prisma.service";
-import {getParam, RootObject} from "../legacy.controller";
-import {getMapEnumFromId, getMapImage, maps} from 'graph/src/helper/maps';
-import {ProfileService} from "../service/profile.service";
-import {Prisma} from "@prisma/client";
-import {groupBy, sortBy} from "lodash";
-import {getCivImage} from "../../helper/civs";
-import {ReferenceService} from "../service/reference.service";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Controller, Get, Request, Response, UseGuards } from '@nestjs/common';
+import { createZodDto } from 'nestjs-zod'
+import { z } from 'nestjs-zod/z'
+import { getPlayerBackgroundColor, parseISONullable, sendResponse } from "../../helper/util";
+import { getTranslation } from "../../../../collector/src/helper/translation";
+import { getLeaderboardEnumFromId, getLeaderboardIdFromEnum, leaderboards } from "../../helper/leaderboards";
+import { PrismaService } from "../../service/prisma.service";
+import { getParam, RootObject } from "../legacy.controller";
+import { getMapEnumFromId, getMapImage, maps } from 'graph/src/helper/maps';
+import { ProfileService } from "../service/profile.service";
+import { Prisma } from "@prisma/client";
+import { groupBy, sortBy } from "lodash";
+import { getCivImage } from "../../helper/civs";
+import { ReferenceService } from "../service/reference.service";
 
 class ProfileSingleDto extends createZodDto(z.object({
     profile_id: z.string().regex(/^\d+$/).transform(Number),
@@ -83,12 +85,11 @@ export class MatchesController {
                                         m.leaderboard_id IN (${Prisma.join(leaderboardIdList)}) AND
                                         EXISTS (SELECT * FROM player p2 WHERE p2.match_id=m.match_id AND p2.profile_id IN (${Prisma.join(profileIdList)}))
                                       
-                                        ${
-                                          search ? Prisma.sql`AND EXISTS (SELECT * FROM player p2 JOIN profile pr2 on pr2.profile_id = p2.profile_id WHERE p2.match_id=m.match_id AND pr2.name ILIKE ${search})` : Prisma.empty
-                                        }
+                                        ${search ? Prisma.sql`AND EXISTS (SELECT * FROM player p2 JOIN profile pr2 on pr2.profile_id = p2.profile_id WHERE p2.match_id=m.match_id AND pr2.name ILIKE ${search})` : Prisma.empty
+            }
                                       
                                       ORDER BY m.started desc
-                                      OFFSET ${start-1}
+                                      OFFSET ${start - 1}
                                       LIMIT ${count}
                     )             
             ORDER BY m.started desc
@@ -99,13 +100,13 @@ export class MatchesController {
             return Object.entries(groupBy(match.players, p => {
                 if (p.team != -1) return p.team;
                 return teamIndex++;
-            })).map(([team, players]) => ({team, players}));
+            })).map(([team, players]) => ({ team, players }));
         };
 
         let matches2 = Object.entries(groupBy(matches, x => x.match_id)).map(([matchId, players]) => {
             const match = players[0];
 
-            const teams = getTeams({players});
+            const teams = getTeams({ players });
 
             return {
                 matchId: match.match_id,
@@ -144,7 +145,7 @@ export class MatchesController {
                 victory: match.victory,
                 revealMap: match.reveal_map,
                 privacy: match.privacy,
-                teams: teams.map(({players}) => players.map(p => ({
+                teams: teams.map(({ players }) => players.map(p => ({
                     profileId: p.profile_id,
                     name: p.player_name,
                     rating: p.rating,

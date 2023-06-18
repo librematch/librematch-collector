@@ -1,4 +1,6 @@
-import {$$asyncIterator} from "iterall";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { $$asyncIterator } from "iterall";
 
 // https://github.com/apollographql/graphql-subscriptions/blob/master/README.md#custom-asynciterator-wrappers
 export function mapIterator<T>(asyncIterator: AsyncIterator<T>, callback: any) {

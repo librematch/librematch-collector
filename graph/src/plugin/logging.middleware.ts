@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import { Injectable, NestMiddleware } from '@nestjs/common';
 import { Request, Response, NextFunction } from 'express';
-import {format, formatISO} from "date-fns";
+import { format, formatISO } from "date-fns";
 
 @Injectable()
 export class LoggingMiddleware implements NestMiddleware {

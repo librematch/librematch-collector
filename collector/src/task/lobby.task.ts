@@ -1,28 +1,30 @@
-import {CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {chunk, cloneDeep, flatten, isEqual, meanBy, sortBy, sumBy, uniq, uniqBy} from "lodash";
-import {retrieveAllAdvertisements} from "../helper/api-paging";
-import {getProfileName, IObservableAdvertisement, patchApiConfig} from "../helper/api";
-import {parseAdvertisement} from "../parser/advertisement/advertisement";
-import {PUB_SUB} from "../../../graph/src/modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {Cache} from 'cache-manager';
-import {sleep} from "../helper/util";
-import {sendMetric} from "../helper/metric-api";
-import {Prisma} from "@prisma/client";
-import {parseProfile} from "../parser/profile";
-import {upsertMany} from "../helper/db";
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
-import {IParsedGenericMatch, IParsedGenericPlayer} from "../parser/match";
-import {getPlayerBackgroundColor, parseIntNullable} from "../../../graph/src/helper/util";
-import {putKv, putMessage} from "../helper/kv-api";
-import {Camelized, camelizeKeys} from "humps";
-import {getTranslation} from "../helper/translation";
-import {getCivImage} from "../../../graph/src/helper/civs";
-import {getStatusEnumFromId} from "../../../graph/src/helper/enums";
-import {getLeaderboardEnumFromId} from "../../../graph/src/helper/leaderboards";
-import {getMapEnumFromId, getMapImage} from "../../../graph/src/helper/maps";
-import {RedisService} from "../../../graph/src/service/redis.service";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { chunk, cloneDeep, flatten, isEqual, meanBy, sortBy, sumBy, uniq, uniqBy } from "lodash";
+import { retrieveAllAdvertisements } from "../helper/api-paging";
+import { getProfileName, IObservableAdvertisement, patchApiConfig } from "../helper/api";
+import { parseAdvertisement } from "../parser/advertisement/advertisement";
+import { PUB_SUB } from "../../../graph/src/modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { Cache } from 'cache-manager';
+import { sleep } from "../helper/util";
+import { sendMetric } from "../helper/metric-api";
+import { Prisma } from "@prisma/client";
+import { parseProfile } from "../parser/profile";
+import { upsertMany } from "../helper/db";
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
+import { IParsedGenericMatch, IParsedGenericPlayer } from "../parser/match";
+import { getPlayerBackgroundColor, parseIntNullable } from "../../../graph/src/helper/util";
+import { putKv, putMessage } from "../helper/kv-api";
+import { Camelized, camelizeKeys } from "humps";
+import { getTranslation } from "../helper/translation";
+import { getCivImage } from "../../../graph/src/helper/civs";
+import { getStatusEnumFromId } from "../../../graph/src/helper/enums";
+import { getLeaderboardEnumFromId } from "../../../graph/src/helper/leaderboards";
+import { getMapEnumFromId, getMapImage } from "../../../graph/src/helper/maps";
+import { RedisService } from "../../../graph/src/service/redis.service";
 import {
     getBlockedSlotCount,
     getDiffEvents, getDiffEventsAddRemove,
@@ -181,7 +183,7 @@ export class LobbyTask implements OnApplicationBootstrap {
     }
 
     async updateSettings() {
-        const settings = (await this.prisma.setting.findMany({where: {component: 'global'}}));
+        const settings = (await this.prisma.setting.findMany({ where: { component: 'global' } }));
         patchApiConfig({
             appBinaryChecksum: parseIntNullable(settings.find(s => s.key === 'appBinaryChecksum')?.value),
         });
@@ -234,7 +236,7 @@ export class LobbyTask implements OnApplicationBootstrap {
 
         const existingProfiles = await this.prisma.profile.findMany({
             where: {
-                profile_id: {in: profileIds},
+                profile_id: { in: profileIds },
             },
             take: 1000,
         });
@@ -259,10 +261,10 @@ export class LobbyTask implements OnApplicationBootstrap {
     lastPlayersDict: Record<string, Camelized<IParsedGenericPlayer>> = {};
 
     async pushLobbies(lobbies: Camelized<IParsedGenericMatch>[]) {
-        let players = flatten(lobbies.map(l => l.players.map(p => ({...p, matchId: l.matchId}))));
+        let players = flatten(lobbies.map(l => l.players.map(p => ({ ...p, matchId: l.matchId }))));
 
         const getLobbyKey = (lobby: Camelized<IParsedGenericMatch>) => `${lobby.matchId}`;
-        const parseLobbyKey = (key: string) => ({matchId: parseInt(key)});
+        const parseLobbyKey = (key: string) => ({ matchId: parseInt(key) });
 
         const getSlotKey = (player: IMatchesMatchPlayer2) => `${player.matchId}-${player.slot}`;
         const parseSlotKey = (key: string) => ({
@@ -272,8 +274,8 @@ export class LobbyTask implements OnApplicationBootstrap {
 
         lobbies.forEach(l => delete l.players);
 
-        let newLobbiesDict = Object.assign({}, ...lobbies.map((x) => ({[getLobbyKey(x as any)]: x}))) as Record<string, Camelized<IParsedGenericMatch>>;
-        let newPlayersDict = Object.assign({}, ...players.map((x) => ({[getSlotKey(x as any)]: x}))) as Record<string, Camelized<IParsedGenericPlayer>>;
+        let newLobbiesDict = Object.assign({}, ...lobbies.map((x) => ({ [getLobbyKey(x as any)]: x }))) as Record<string, Camelized<IParsedGenericMatch>>;
+        let newPlayersDict = Object.assign({}, ...players.map((x) => ({ [getSlotKey(x as any)]: x }))) as Record<string, Camelized<IParsedGenericPlayer>>;
 
         let streamEventId = '0-0';
 
@@ -296,7 +298,7 @@ export class LobbyTask implements OnApplicationBootstrap {
 
         const events = sortBy([...diffLobbies, ...diffPlayers], event => eventMappingOrder[event.type]);
 
-        await this.cache.set(CACHE_LOBBIES, {streamEventId, events}, {ttl: 200 * 60});
+        await this.cache.set(CACHE_LOBBIES, { streamEventId, events }, { ttl: 200 * 60 });
         // await putKv(CACHE_LOBBIES, {streamEventId, events});
 
         this.lastLobbiesDict = cloneDeep(newLobbiesDict);
@@ -313,7 +315,7 @@ export class LobbyTask implements OnApplicationBootstrap {
                 leaderboard_row: true,
             },
             where: {
-                profile_id: {in: flatten(matches.map(a => a.players.map(p => p.profile_id)))},
+                profile_id: { in: flatten(matches.map(a => a.players.map(p => p.profile_id))) },
             },
         });
 

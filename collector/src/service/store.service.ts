@@ -1,6 +1,8 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import { Injectable, OnModuleInit, OnModuleDestroy } from '@nestjs/common';
-import {PrismaService} from "./prisma.service";
-import {sleep} from "../helper/util";
+import { PrismaService } from "./prisma.service";
+import { sleep } from "../helper/util";
 
 @Injectable()
 export class StoreService implements OnModuleInit, OnModuleDestroy {
@@ -47,7 +49,7 @@ export class StoreService implements OnModuleInit, OnModuleDestroy {
     }
 
     async waitForInit() {
-        while(true) {
+        while (true) {
             if (this.dictionary != null) return;
             await sleep(100);
         }

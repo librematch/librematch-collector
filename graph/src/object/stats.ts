@@ -1,7 +1,8 @@
-import {Field, Int, ObjectType, Parent, ResolveField} from '@nestjs/graphql';
-import {Player} from "./player";
-import {fromUnixTime} from "date-fns";
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import { Field, Int, ObjectType, Parent, ResolveField } from '@nestjs/graphql';
+import { Player } from "./player";
+import { fromUnixTime } from "date-fns";
 
 @ObjectType()
 export class Stats {
@@ -23,19 +24,19 @@ export class Stats {
 
 @ObjectType()
 export class StatsEntry {
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     civ?: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     location?: number;
 
-    @Field(type => Int, {nullable: true})
+    @Field(type => Int, { nullable: true })
     profile_id?: number;
 
-    @Field({nullable: true})
+    @Field({ nullable: true })
     name?: string;
 
-    @Field({nullable: true})
+    @Field({ nullable: true })
     country?: string;
 
     @Field(type => Int)

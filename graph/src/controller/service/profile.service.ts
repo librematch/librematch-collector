@@ -1,6 +1,8 @@
-import {Injectable} from '@nestjs/common';
-import {sendResponse} from "../../helper/util";
-import {PrismaService} from "../../service/prisma.service";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Injectable } from '@nestjs/common';
+import { sendResponse } from "../../helper/util";
+import { PrismaService } from "../../service/prisma.service";
 
 
 @Injectable()

@@ -1,5 +1,6 @@
-import {Field, Int, ObjectType} from '@nestjs/graphql';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
+import { Field, Int, ObjectType } from '@nestjs/graphql';
 
 @ObjectType()
 export class RatingHistory {

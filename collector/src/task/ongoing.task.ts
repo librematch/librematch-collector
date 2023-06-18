@@ -1,22 +1,24 @@
-import {CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap} from '@nestjs/common';
-import {PrismaService} from '../service/prisma.service';
-import {Prisma} from '@prisma/client'
-import {chunk, cloneDeep, flatten, meanBy, sortBy, sumBy, uniq, uniqBy} from "lodash";
-import {retrieveAllObservableAdvertisements} from "../helper/api-paging";
-import {upsertMany} from "../helper/db";
-import {IObservableAdvertisement, IProfile, patchApiConfig} from "../helper/api";
-import {parseObservableAdvertisement} from "../parser/advertisement/advertisement";
-import {parseProfile} from "../parser/profile";
-import {isAfter, subMinutes} from "date-fns";
-import {PUB_SUB} from "../../../graph/src/modules/redis.module";
-import {RedisPubSub} from "graphql-redis-subscriptions";
-import {sendMetric} from "../helper/metric-api";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Inject, Injectable, Logger, OnApplicationBootstrap } from '@nestjs/common';
+import { PrismaService } from '../service/prisma.service';
+import { Prisma } from '@prisma/client'
+import { chunk, cloneDeep, flatten, meanBy, sortBy, sumBy, uniq, uniqBy } from "lodash";
+import { retrieveAllObservableAdvertisements } from "../helper/api-paging";
+import { upsertMany } from "../helper/db";
+import { IObservableAdvertisement, IProfile, patchApiConfig } from "../helper/api";
+import { parseObservableAdvertisement } from "../parser/advertisement/advertisement";
+import { parseProfile } from "../parser/profile";
+import { isAfter, subMinutes } from "date-fns";
+import { PUB_SUB } from "../../../graph/src/modules/redis.module";
+import { RedisPubSub } from "graphql-redis-subscriptions";
+import { sendMetric } from "../helper/metric-api";
 import fetch from "node-fetch";
-import {Cache} from "cache-manager";
-import {InjectSentry, SentryService} from "@ntegral/nestjs-sentry";
-import {IParsedGenericMatch, IParsedGenericPlayer} from "../parser/match";
-import {getPlayerBackgroundColor, parseIntNullable} from "../../../graph/src/helper/util";
-import {Camelized, camelizeKeys} from "humps";
+import { Cache } from "cache-manager";
+import { InjectSentry, SentryService } from "@ntegral/nestjs-sentry";
+import { IParsedGenericMatch, IParsedGenericPlayer } from "../parser/match";
+import { getPlayerBackgroundColor, parseIntNullable } from "../../../graph/src/helper/util";
+import { Camelized, camelizeKeys } from "humps";
 import {
     getBlockedSlotCount,
     getDiffEvents,
@@ -24,14 +26,14 @@ import {
     getLobbyPlayerName,
     getTotalSlotCount
 } from "../../../graph/src/helper/event";
-import {getTranslation} from "../helper/translation";
-import {getCivImage} from "../../../graph/src/helper/civs";
-import {getStatusEnumFromId} from "../../../graph/src/helper/enums";
-import {getLeaderboardEnumFromId} from "../../../graph/src/helper/leaderboards";
-import {getMapEnumFromId, getMapImage} from "../../../graph/src/helper/maps";
-import {CACHE_LOBBIES, IMatchesMatchPlayer2, STREAM_LOBBIES} from "./lobby.task";
-import {RedisService} from "../../../graph/src/service/redis.service";
-import {putKv} from "../helper/kv-api";
+import { getTranslation } from "../helper/translation";
+import { getCivImage } from "../../../graph/src/helper/civs";
+import { getStatusEnumFromId } from "../../../graph/src/helper/enums";
+import { getLeaderboardEnumFromId } from "../../../graph/src/helper/leaderboards";
+import { getMapEnumFromId, getMapImage } from "../../../graph/src/helper/maps";
+import { CACHE_LOBBIES, IMatchesMatchPlayer2, STREAM_LOBBIES } from "./lobby.task";
+import { RedisService } from "../../../graph/src/service/redis.service";
+import { putKv } from "../helper/kv-api";
 
 export const CACHE_ONGOING_MATCHES = 'ongoing-matches';
 export const PUBSUB_ONGOING_MATCHES = 'ongoing-matches';
@@ -74,7 +76,7 @@ export class OngoingTask implements OnApplicationBootstrap {
     }
 
     async updateSettings() {
-        const settings = (await this.prisma.setting.findMany({where: {component: 'global'}}));
+        const settings = (await this.prisma.setting.findMany({ where: { component: 'global' } }));
         patchApiConfig({
             appBinaryChecksum: parseIntNullable(settings.find(s => s.key === 'appBinaryChecksum')?.value),
         });
@@ -85,7 +87,7 @@ export class OngoingTask implements OnApplicationBootstrap {
         this.metricOngoingMatches = 0;
 
         try {
-            const response = await fetch('https://steamplayercount.com/api/813780', {timeout: 60 * 1000});
+            const response = await fetch('https://steamplayercount.com/api/813780', { timeout: 60 * 1000 });
             const values = await response.json();
             await sendMetric(`online_players`, values[values.length - 1][1]);
         } catch (e) {
@@ -163,9 +165,9 @@ export class OngoingTask implements OnApplicationBootstrap {
 
     async pushOngoingMatches(lobbies: Camelized<IParsedGenericMatch>[]) {
         const getMatchKey = (lobby: Camelized<IParsedGenericMatch>) => `${lobby.matchId}`;
-        const parseMatchKey = (key: string) => ({matchId: parseInt(key)});
+        const parseMatchKey = (key: string) => ({ matchId: parseInt(key) });
 
-        let newOngoingMatchesDict = Object.assign({}, ...lobbies.map((x) => ({[getMatchKey(x as any)]: x}))) as Record<string, Camelized<IParsedGenericMatch>>;
+        let newOngoingMatchesDict = Object.assign({}, ...lobbies.map((x) => ({ [getMatchKey(x as any)]: x }))) as Record<string, Camelized<IParsedGenericMatch>>;
 
         let streamEventId = '0-0';
 
@@ -185,7 +187,7 @@ export class OngoingTask implements OnApplicationBootstrap {
 
         const events = sortBy(diffLobbies, event => eventMappingOrder[event.type]);
 
-        await this.cache.set(CACHE_ONGOING_MATCHES, {streamEventId, events}, {ttl: 200 * 60});
+        await this.cache.set(CACHE_ONGOING_MATCHES, { streamEventId, events }, { ttl: 200 * 60 });
         // await putKv(CACHE_ONGOING_MATCHES, {streamEventId, events});
 
         this.lastOngoingMatchesDict = cloneDeep(newOngoingMatchesDict);
@@ -201,7 +203,7 @@ export class OngoingTask implements OnApplicationBootstrap {
                 leaderboard_row: true,
             },
             where: {
-                profile_id: {in: flatten(matches.map(a => a.players.map(p => p.profile_id)))},
+                profile_id: { in: flatten(matches.map(a => a.players.map(p => p.profile_id))) },
             },
         });
 
@@ -277,7 +279,7 @@ export class OngoingTask implements OnApplicationBootstrap {
                 const parsedData = parseObservableAdvertisement(observableAdvertisement);
                 parsed.push(parsedData);
 
-                const {players, ...matchData} = parsedData;
+                const { players, ...matchData } = parsedData;
 
                 if (this.lastObservableMatches.find(o => o.match_id === parsedData.match_id)) continue;
 
@@ -295,11 +297,11 @@ export class OngoingTask implements OnApplicationBootstrap {
             }
 
             const uniqueProfileIds = uniq(playerItems.map(player => player.profile_id));
-            const profileItems = uniqueProfileIds.map(profileId => ({profile_id: profileId}));
+            const profileItems = uniqueProfileIds.map(profileId => ({ profile_id: profileId }));
 
             const existingMatches = await this.prisma.match.findMany({
                 where: {
-                    match_id: {in: matchItems.map(m => m.match_id)},
+                    match_id: { in: matchItems.map(m => m.match_id) },
                 },
             });
 
@@ -319,8 +321,8 @@ export class OngoingTask implements OnApplicationBootstrap {
                     },
                 },
                 where: {
-                    match_id: {in: matchItems.map(m => m.match_id)},
-                    started: {gt: new Date(Date.now() - 1000 * 60 * 5)},
+                    match_id: { in: matchItems.map(m => m.match_id) },
+                    started: { gt: new Date(Date.now() - 1000 * 60 * 5) },
                 },
                 orderBy: {
                     started: 'asc',

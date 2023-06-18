@@ -1,4 +1,6 @@
-import {Base64, cleanStr, decompressZlib} from "./util";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Base64, cleanStr, decompressZlib } from "./util";
 
 export function decompressSlotInfo(str: string) {
     let playersDataBlock: string;

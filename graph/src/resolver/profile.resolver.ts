@@ -1,9 +1,11 @@
-import {Args, Int, Parent, Query, ResolveField, Resolver} from "@nestjs/graphql";
-import {fromUnixTime} from "date-fns";
-import {Profile} from "../object/profile";
-import {PrismaService} from "../service/prisma.service";
-import {LeaderboardRow} from "../object/leaderboard-row";
-import {Stats} from "../object/stats";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { Args, Int, Parent, Query, ResolveField, Resolver } from "@nestjs/graphql";
+import { fromUnixTime } from "date-fns";
+import { Profile } from "../object/profile";
+import { PrismaService } from "../service/prisma.service";
+import { LeaderboardRow } from "../object/leaderboard-row";
+import { Stats } from "../object/stats";
 
 
 @Resolver(of => Profile)
@@ -11,11 +13,11 @@ export class ProfileResolver {
 
     constructor(
         private prisma: PrismaService,
-    ) {}
+    ) { }
 
     @Query(returns => Profile)
     async profile(
-        @Args("profile_id", {type: () => Int, nullable: true}) profile_id?: number,
+        @Args("profile_id", { type: () => Int, nullable: true }) profile_id?: number,
     ) {
         // const user = await this.prisma.$queryRaw`
         //   SELECT profile_id, MIN(name) as name, MIN(country) as country, SUM(games) as games, MAX(last_match_time) as last_match_time
@@ -61,7 +63,7 @@ export class ProfileResolver {
 
     async getLeaderboard(leaderboardId: number, profileId: number) {
         const leaderboard = await this.prisma.leaderboard_row.findUnique({
-            where: {leaderboard_id_profile_id: {leaderboard_id: leaderboardId, profile_id: profileId}},
+            where: { leaderboard_id_profile_id: { leaderboard_id: leaderboardId, profile_id: profileId } },
         });
         if (leaderboard == null) return null;
         return {

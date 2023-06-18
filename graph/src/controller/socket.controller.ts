@@ -1,5 +1,7 @@
-import {CACHE_MANAGER, Controller, Get, Inject, Req, Response} from '@nestjs/common';
-import {sendResponse} from "../helper/util";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { CACHE_MANAGER, Controller, Get, Inject, Req, Response } from '@nestjs/common';
+import { sendResponse } from "../helper/util";
 import {
     OnGatewayConnection,
     OnGatewayDisconnect,
@@ -7,13 +9,13 @@ import {
     WebSocketGateway,
     WebSocketServer,
 } from '@nestjs/websockets';
-import {Server} from 'ws';
-import {Cache} from "cache-manager";
-import {RedisService} from "../service/redis.service";
-import {CACHE_LOBBIES, STREAM_LOBBIES} from "../../../collector/src/task/lobby.task";
-import {CACHE_ONGOING_MATCHES, STREAM_ONGOING_MATCHES} from "../../../collector/src/task/ongoing.task";
-import {sleep} from "../../../collector/src/helper/util";
-import {chunk} from "lodash";
+import { Server } from 'ws';
+import { Cache } from "cache-manager";
+import { RedisService } from "../service/redis.service";
+import { CACHE_LOBBIES, STREAM_LOBBIES } from "../../../collector/src/task/lobby.task";
+import { CACHE_ONGOING_MATCHES, STREAM_ONGOING_MATCHES } from "../../../collector/src/task/ongoing.task";
+import { sleep } from "../../../collector/src/helper/util";
+import { chunk } from "lodash";
 
 @Controller()
 export class SocketController {
@@ -93,7 +95,7 @@ export class SocketGateway implements OnGatewayInit, OnGatewayConnection, OnGate
             // let {streamEventId, events} = JSON.parse(await _redis.redis.get(cache));
 
             const start = new Date();
-            let {streamEventId, events} = JSON.parse(await _redis.redis.get(cache));
+            let { streamEventId, events } = JSON.parse(await _redis.redis.get(cache));
             console.log(new Date().getTime() - start.getTime(), 'ms');
 
             if (socket.readyState === READY_STATE.OPEN) {

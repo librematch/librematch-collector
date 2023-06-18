@@ -1,39 +1,41 @@
-import {CacheModule, DynamicModule, Injectable, Logger, MiddlewareConsumer, Module, OnModuleInit} from '@nestjs/common';
+// SPDX-License-Identifier: AGPL-3.0-or-later
 
-import {PrismaService} from "../service/prisma.service";
-import {ScheduleModule} from "@nestjs/schedule";
-import {GraphQLModule} from "@nestjs/graphql";
-import {PlayerResolver} from "../resolver/player.resolver";
-import {MatchResolver} from "../resolver/match.resolver";
-import {PubSubModule} from "../modules/redis.module";
-import {LeaderboardRowResolver} from "../resolver/leaderboard-row.resolver";
-import {ProfileResolver} from "../resolver/profile.resolver";
-import {LobbyResolver} from "../resolver/lobby.resolver";
-import {LegacyController} from "../controller/legacy.controller";
-import {ApolloDriver} from '@nestjs/apollo';
-import {HttpProxyController} from "../controller/http-proxy.controller";
-import {LoggingMiddleware} from "../plugin/logging.middleware";
-import {ThrottlerModule} from "@nestjs/throttler";
-import {DataController} from "../controller/data.controller";
-import {ReadyController} from "../controller/ready.controller";
+import { CacheModule, DynamicModule, Injectable, Logger, MiddlewareConsumer, Module, OnModuleInit } from '@nestjs/common';
+
+import { PrismaService } from "../service/prisma.service";
+import { ScheduleModule } from "@nestjs/schedule";
+import { GraphQLModule } from "@nestjs/graphql";
+import { PlayerResolver } from "../resolver/player.resolver";
+import { MatchResolver } from "../resolver/match.resolver";
+import { PubSubModule } from "../modules/redis.module";
+import { LeaderboardRowResolver } from "../resolver/leaderboard-row.resolver";
+import { ProfileResolver } from "../resolver/profile.resolver";
+import { LobbyResolver } from "../resolver/lobby.resolver";
+import { LegacyController } from "../controller/legacy.controller";
+import { ApolloDriver } from '@nestjs/apollo';
+import { HttpProxyController } from "../controller/http-proxy.controller";
+import { LoggingMiddleware } from "../plugin/logging.middleware";
+import { ThrottlerModule } from "@nestjs/throttler";
+import { DataController } from "../controller/data.controller";
+import { ReadyController } from "../controller/ready.controller";
 import * as redisStore from 'cache-manager-redis-store';
-import {OngoingResolver} from "../resolver/ongoing.resolver";
-import {SentryModule} from "@ntegral/nestjs-sentry";
-import {RewriteFrames} from "@sentry/integrations";
-import {ZodValidationPipe} from "nestjs-zod";
-import {APP_PIPE} from "@nestjs/core";
-import {LoggingPlugin} from "../plugin/logging.plugin";
-import {LeaderboardController} from "../controller/api/leaderboards";
-import {LeaderboardSingleController} from "../controller/api/leaderboards.[id]";
-import {MatchesController} from "../controller/api/matches";
-import {ProfileSingleController} from "../controller/api/profiles.[id]";
-import {ProfileController} from "../controller/api/profiles";
-import {MapController} from "../controller/api/maps";
-import {ReferenceService} from "../controller/service/reference.service";
-import {ProfileService} from "../controller/service/profile.service";
-import {SocketGateway, SocketController} from "../controller/socket.controller";
-import {RedisService} from "../service/redis.service";
-import {ProxyController} from "../controller/proxy.controller";
+import { OngoingResolver } from "../resolver/ongoing.resolver";
+import { SentryModule } from "@ntegral/nestjs-sentry";
+import { RewriteFrames } from "@sentry/integrations";
+import { ZodValidationPipe } from "nestjs-zod";
+import { APP_PIPE } from "@nestjs/core";
+import { LoggingPlugin } from "../plugin/logging.plugin";
+import { LeaderboardController } from "../controller/api/leaderboards";
+import { LeaderboardSingleController } from "../controller/api/leaderboards.[id]";
+import { MatchesController } from "../controller/api/matches";
+import { ProfileSingleController } from "../controller/api/profiles.[id]";
+import { ProfileController } from "../controller/api/profiles";
+import { MapController } from "../controller/api/maps";
+import { ReferenceService } from "../controller/service/reference.service";
+import { ProfileService } from "../controller/service/profile.service";
+import { SocketGateway, SocketController } from "../controller/socket.controller";
+import { RedisService } from "../service/redis.service";
+import { ProxyController } from "../controller/proxy.controller";
 
 
 @Module({
@@ -181,7 +183,7 @@ export class SchemaJsonTask implements OnModuleInit {
     private readonly logger = new Logger(SchemaJsonTask.name);
 
     async onModuleInit() {
-        await fs2json({input: 'graph/schema.graphql', output: 'graph/schema.json'});
+        await fs2json({ input: 'graph/schema.graphql', output: 'graph/schema.json' });
         this.logger.log('Created schema.json');
     }
 }

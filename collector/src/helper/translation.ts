@@ -1,3 +1,5 @@
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
 import en from '../../assets/translation/en.json';
 
 export function getTranslation(language: string, category: string, key: number) {

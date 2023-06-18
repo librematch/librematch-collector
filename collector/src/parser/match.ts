@@ -1,9 +1,11 @@
-import {fromUnixTime} from "date-fns";
-import {IGenericMatch} from "../helper/community-api.types";
-import {decompressOptions, parseOptions} from "./options";
-import {parseRecentMatchSlotInfo} from "./relic/recent-match-players";
-import {decompressSlotInfo} from "./slotinfo";
-import {parseAdvertisementSlotInfo} from "./advertisement/advertisement-players";
+// SPDX-License-Identifier: AGPL-3.0-or-later
+
+import { fromUnixTime } from "date-fns";
+import { IGenericMatch } from "../helper/community-api.types";
+import { decompressOptions, parseOptions } from "./options";
+import { parseRecentMatchSlotInfo } from "./relic/recent-match-players";
+import { decompressSlotInfo } from "./slotinfo";
+import { parseAdvertisementSlotInfo } from "./advertisement/advertisement-players";
 
 export const MATCH_PARSER_VERSION = 2;
 
